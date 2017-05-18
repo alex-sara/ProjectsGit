@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:local="clr-namespace:Examples;assembly=Examples"
+             xmlns:this="clr-namespace:Examples;assembly=Examples"
+             x:Class="Examples.AvailableExamplesPageUWP">
+  
+  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+    <Grid.Resources>
+      <ResourceDictionary>
+        <local:UwpImageSourceConverter x:Key="UwpImageSourceConverter"/>
+      </ResourceDictionary>
+    </Grid.Resources>
+    <Image HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand"
+           Source="Assets\background_normal.png"
+           Aspect="AspectFill"/>
+    <telerikPrimitives:RadSideDrawer  x:Name="homeScreenDrawer"
+                                      HorizontalOptions="Fill"
+                                      VerticalOptions="FillAndExpand"
+                                      IsOpen="{Binding IsOpen, Mode=TwoWay}"
+                                      DrawerTransitionType="SlideInOnTop"
+                                      DrawerTransitionDuration="0.250"
+                                      DrawerTransitionFadeOpacity="1"
+                                      DrawerLength="140"
+                                      DrawerLocation="Bottom">
+      <telerikPrimitives:RadSideDrawer.MainContent>
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+
+          <!--Navigation Bar-->
+          <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="28"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="backButton"
+                  Grid.ColumnSpacing="0"
+                  Grid.RowSpacing="0"
+                  Padding="12, 0, 0, 0"
+                  BackgroundColor="Transparent"
+                  HeightRequest="48"
+                  WidthRequest="48">
+              <Image HorizontalOptions="Start"
+                     InputTransparent="True"
+                     Source="Assets\ic_arrow_back.png"
+                     VerticalOptions="Center"/>
+            </Grid>
+            <Label Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   x:Name="navigationLabel"
+                   TextColor="#000000"
+                   FontSize="20"
+                   Margin="16, 0, 0, 0"
+                   FontFamily="/Assets/Fonts/segoeuisl.ttf#Segoe UI"
+                   VerticalOptions="Center" />
+          </Grid>
+          
+            <Grid Grid.ColumnSpacing="0"
+                  Padding="12, 0, 12, 0"
+                  Grid.Row="1"
+                  Grid.RowSpacing="0">
+              <telerikDataControls:RadListView ItemsSource="{Binding AvailableExamplesList}"
+                                               ItemTapped="ExampleTapped"
+                                               BackgroundColor="Transparent"
+                                               x:Name="examplesList">
+                <telerikDataControls:RadListView.ItemStyle>
+                  <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+                </telerikDataControls:RadListView.ItemStyle>
+                <telerikDataControls:RadListView.SelectedItemStyle>
+                  <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+                </telerikDataControls:RadListView.SelectedItemStyle>
+                <telerikDataControls:RadListView.PressedItemStyle>
+                  <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+                </telerikDataControls:RadListView.PressedItemStyle>
+                <telerikDataControls:RadListView.LayoutDefinition>
+                  <listView:ListViewGridLayout Orientation="Vertical" VerticalItemSpacing="12" HorizontalItemSpacing="12" ItemLength="270"/>
+                </telerikDataControls:RadListView.LayoutDefinition>
+                <telerikDataControls:RadListView.ItemTemplate>
+                  <DataTemplate>
+                    <listView:ListViewTemplateCell>
+                      <listView:ListViewTemplateCell.View>
+                        <StackLayout StackLayout.Spacing="4">
+                          <Image Source="{Binding ImageSourceUri, Converter={StaticResource UwpImageSourceConverter}}"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Start">
+                          </Image>
+                          <Label Text="{Binding UserFriendlyTitle}"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="Start"
+                                 TextColor="#1E323F" 
+                                 FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI"
+                                 FontSize="15"/>
+                        </StackLayout>
+                      </listView:ListViewTemplateCell.View>
+                    </listView:ListViewTemplateCell>
+                  </DataTemplate>
+                </telerikDataControls:RadListView.ItemTemplate>
+              </telerikDataControls:RadListView>
+            </Grid>
+        </Grid>
+      </telerikPrimitives:RadSideDrawer.MainContent>
+
+      <telerikPrimitives:RadSideDrawer.DrawerContent>
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" BackgroundColor="#1E323F" Padding="0, 8, 0, 8">
+          <telerikDataControls:RadListView ItemsSource="{Binding InformationMenuList}" ItemTapped="LinkTapped">
+            <telerikDataControls:RadListView.ItemStyle>
+              <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+            </telerikDataControls:RadListView.ItemStyle>
+            <telerikDataControls:RadListView.PressedItemStyle>
+              <listView:ListViewItemStyle BackgroundColor="#465763" BorderWidth="0" />
+            </telerikDataControls:RadListView.PressedItemStyle>
+            <telerikDataControls:RadListView.SelectedItemStyle>
+              <listView:ListViewItemStyle BackgroundColor="#465763" BorderWidth="0" />
+            </telerikDataControls:RadListView.SelectedItemStyle>
+            <telerikDataControls:RadListView.LayoutDefinition>
+              <listView:ListViewLinearLayout ItemLength="48"/>
+            </telerikDataControls:RadListView.LayoutDefinition>
+            <telerikDataControls:RadListView.ItemTemplate>
+              <DataTemplate>
+                <listView:ListViewTemplateCell>
+                  <listView:ListViewTemplateCell.View>
+                    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="12, 0, 0, 0">
+                      <Label Text="{Binding }" VerticalOptions="Center" TextColor="#E1E2E3" FontSize="16"/>
+                    </Grid>
+                  </listView:ListViewTemplateCell.View>
+                </listView:ListViewTemplateCell>
+              </DataTemplate>
+            </telerikDataControls:RadListView.ItemTemplate>
+          </telerikDataControls:RadListView>
+        </Grid>
+      </telerikPrimitives:RadSideDrawer.DrawerContent>
+    </telerikPrimitives:RadSideDrawer>
+    <Grid HeightRequest="24"
+          BackgroundColor="#14222C"
+          Opacity="0.5"
+          VerticalOptions="End"
+          HorizontalOptions="Fill"/>
+    <Grid x:Name="drawerOpenerHost"
+          HorizontalOptions="End"
+          VerticalOptions="End"
+          HeightRequest="24"
+          WidthRequest="48"
+          BackgroundColor="Transparent"
+          Padding="0, 0, 12, 0" >
+      <Image HorizontalOptions="End"
+             VerticalOptions="Center"
+             Source="Assets\ic_menu.png" />
+    </Grid>
+  </Grid>
+</ContentPage>

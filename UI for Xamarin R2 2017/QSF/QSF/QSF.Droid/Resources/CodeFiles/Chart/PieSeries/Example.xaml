@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:Examples.Common"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+             xmlns:examples="clr-namespace:Examples;assembly=Examples"
+             x:Class="Examples.Chart.PieSeries.Example">
+  <ContentPage.Resources>
+    <ResourceDictionary MergedWith="examples:GalleryResources">
+      <DataTemplate x:Key="Pie">
+        <telerikChart:RadPieChart PaletteName="Light" SelectionPaletteName="LightSelected" BackgroundColor="White">
+          <telerikChart:RadPieChart.Behaviors>
+            <telerikChart:ChartSelectionBehavior DataPointSelectionMode="Single" SeriesSelectionMode="None"/>
+          </telerikChart:RadPieChart.Behaviors>
+          <telerikChart:RadPieChart.Series>
+            <telerikChart:PieSeries ValueBinding="Value" ItemsSource="{Binding Pie2Data}" RadiusFactor="0.9" />
+          </telerikChart:RadPieChart.Series>
+        </telerikChart:RadPieChart>
+      </DataTemplate>
+      <DataTemplate x:Key="Pie2">
+        <telerikChart:RadPieChart PaletteName="Light" SelectionPaletteName="LightSelected" BackgroundColor="White">
+          <telerikChart:RadPieChart.Behaviors>
+            <telerikChart:ChartSelectionBehavior DataPointSelectionMode="Single" SeriesSelectionMode="None"/>
+          </telerikChart:RadPieChart.Behaviors>
+          <telerikChart:RadPieChart.Series>
+            <telerikChart:PieSeries ValueBinding="Value" ItemsSource="{Binding Pie3Data}" RadiusFactor="0.9" />
+          </telerikChart:RadPieChart.Series>
+        </telerikChart:RadPieChart>
+      </DataTemplate>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <Grid BackgroundColor="White">
+    <Grid.Behaviors>
+      <examples:CustomBehavior />
+    </Grid.Behaviors>
+    <Grid RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="70" />
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <telerikDataControls:RadListView x:Name="galleryItemsList"
+                                        ItemsSource="{Binding PieLayouts}"
+                                        SelectionChanged="SelectedItemsCollectionChanged"
+                                        Style="{StaticResource galleryItemsListStyle}" />
+      <Grid Grid.Row="1" x:Name="root" Padding="16, 0, 16, 0" Grid.ColumnSpacing="0" Grid.RowSpacing="0" BackgroundColor="White">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="0,6,0,0">
+          <Label Text="Monthly sales revenue, 2016"
+                 Style="{StaticResource labelHeaderStyle}"
+                 Margin="0, 6, 0, 0" />
+        </Grid>
+        <Grid Grid.Row="1">
+          <StackLayout x:Name="twoPoints" Orientation="Horizontal" Padding="0,20,0,0">
+            <BoxView HeightRequest="10" WidthRequest="10" x:Name="legendBoxView60"/>
+            <Label Text="Germany - 60%" TextColor="#757575">
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="10"
+                            WinPhone="14"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+            <BoxView HeightRequest="10" WidthRequest="10" x:Name="legendBoxView40"/>
+            <Label Text="Belguim - 40%" TextColor="#757575">
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="10"
+                            WinPhone="14"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+          </StackLayout>
+          <StackLayout x:Name="threePoints" Orientation="Horizontal" IsVisible="False" Padding="0,20,0,0">
+            <BoxView HeightRequest="10" WidthRequest="10" x:Name="legendBoxView402"/>
+            <Label Text="Germany - 40%" TextColor="#757575">
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="10"
+                            WinPhone="14"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+            <BoxView HeightRequest="10" WidthRequest="10" x:Name="legendBoxView30"/>
+            <Label Text="Belguim - 30%" TextColor="#757575">
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="10"
+                            WinPhone="14"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+            <BoxView HeightRequest="10" WidthRequest="10" x:Name="legendBoxView302"/>
+            <Label Text="France - 30%" TextColor="#757575">
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="10"
+                            WinPhone="14"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+          </StackLayout>
+        </Grid>
+        <!--<telerikChart:RadPieChart Grid.Row="2" x:Name="chart" PaletteName="LightSelected" BackgroundColor="White"/>-->
+        <common:ContentPresenter Grid.Row="2" x:Name="ExamplePresenter"/>
+      </Grid>
+    </Grid>
+  </Grid>
+</ContentPage>

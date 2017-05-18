@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:examples="clr-namespace:Examples;assembly=Examples"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             x:Class="Examples.ListView.Selection.ItemDetailsPage"
+             BackgroundColor="White">
+  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+    <Grid.Behaviors>
+      <examples:CustomBehavior />
+    </Grid.Behaviors>
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+      <Grid.RowDefinitions>
+        <RowDefinition>
+          <RowDefinition.Height>
+            <OnPlatform x:TypeArguments="GridLength"
+                        iOS="44"
+                        Android="56"
+                        WinPhone="56"/>
+          </RowDefinition.Height>
+        </RowDefinition>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <!--Navugation Bar-->
+      <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" BackgroundColor="#5D4037" HorizontalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="72"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="backButton" HeightRequest="48" WidthRequest="48" Padding="16,0,0,0">
+          <Image HorizontalOptions="Start" VerticalOptions="Center">
+            <Image.Source>
+              <OnPlatform x:TypeArguments="ImageSource"
+                iOS="up_caret_white"
+                Android="up_caret_white"
+                WinPhone="Assets\up_caret_white.png"/>
+            </Image.Source>
+          </Image>
+        </Grid>
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="0,0,16,0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" x:Name="buttonsHolder">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48"/>
+            <ColumnDefinition Width="48"/>
+          </Grid.ColumnDefinitions>
+          <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+            <Button BackgroundColor="#5D4037" Clicked="FavoriteButtonClicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BorderRadius="0"/>
+            <Image HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True">
+              <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                  iOS="ic_listview_selection_fav"
+                  Android="ic_listview_selection_fav"
+                  WinPhone="Assets\ic_listview_selection_fav.png"/>
+              </Image.Source>
+            </Image>
+          </Grid>
+          <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Grid.Column="1">
+            <Button BackgroundColor="#5D4037" Clicked="DeleteButtonClicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BorderRadius="0"/>
+            <Image HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True">
+              <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                  iOS="ic_listview_selection_delete"
+                  Android="ic_listview_selection_delete"
+                  WinPhone="Assets\ic_listview_selection_delete.png"/>
+              </Image.Source>
+            </Image>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid Grid.Row="1">
+        <StackLayout StackLayout.Spacing="14" x:Name="content" BackgroundColor="#E4D8D4">
+          <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness"
+                        iOS="40,20,20,20"
+                        WinPhone="16, 20, 16, 0"
+                        Android="16, 20, 16, 0"/>
+          </StackLayout.Padding>
+          <StackLayout Orientation="Horizontal">
+            <Image HeightRequest="14" WidthRequest="14" IsVisible="{Binding IsFavourite}">
+              <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                  iOS="ic_listview_selection_fav1"
+                  Android="ic_listview_selection_fav1"
+                  WinPhone="Assets\ic_listview_selection_fav1.png"/>
+              </Image.Source>
+            </Image>
+            <Label Text="{Binding Title}" TextColor="#4D4745" FontSize="16" BackgroundColor="#E4D8D4"/>
+          </StackLayout>
+          <Label Text="{Binding Content}" LineBreakMode="WordWrap" TextColor="#918986" FontSize="14"/>
+        </StackLayout>
+      </Grid>
+    </Grid>
+  </Grid>
+</ContentPage>

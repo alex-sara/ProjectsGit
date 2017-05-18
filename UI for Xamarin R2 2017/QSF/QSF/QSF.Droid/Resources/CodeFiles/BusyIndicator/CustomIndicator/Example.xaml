@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Examples.BusyIndicator.CustomIndicator.Example"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+             xmlns:controls="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:examples="clr-namespace:Examples;assembly=Examples">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="infoButtonHorizontalOptions"
+                        x:TypeArguments="LayoutOptions"
+                        Android="End"
+                        iOS="End"
+                        WinPhone="End"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid examples:CustomBehavior.InfoButtonHorizontalOptions="{StaticResource infoButtonHorizontalOptions}"
+          examples:CustomBehavior.IsBackButtonVisible="False"
+          BackgroundColor="White"
+          Grid.ColumnSpacing="0"
+          Grid.RowSpacing="0">
+        <Grid.Behaviors>
+            <examples:CustomBehavior />
+        </Grid.Behaviors>
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength"
+                                Android="56"
+                                WinPhone="56"
+                                iOS="40" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="*" />
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength"
+                                Android="56"
+                                WinPhone="56"
+                                iOS="40" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid BackgroundColor="#0A90D0"
+              Grid.ColumnSpacing="0"
+              Grid.RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Margin="16,0"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+                                Android="up_caret_white.png"
+                                WinPhone="Assets\up_caret_white.png"
+                                iOS="up_caret_white.png" />
+                    </Image.Source>
+                </Image>
+
+                <Button BackgroundColor="Transparent" Clicked="Button_Clicked">
+                    <Button.Opacity>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                Android="0"
+                                WinPhone="0"
+                                iOS="1" />
+                    </Button.Opacity>
+                </Button>
+
+                <Label Grid.ColumnSpan="2"
+                   FontSize="13"
+                   HorizontalOptions="Center"
+                   Text="Custom Indicator"
+                   TextColor="White"
+                   VerticalOptions="Center" />
+            </Grid>
+
+            <controls:RadBusyIndicator Grid.Row="1"
+                                   AnimationContentHeightRequest="200"
+                                   AnimationContentWidthRequest="200"
+                                   AnimationType="Custom"
+                                   InputTransparent="True"
+                                   IsBusy="True">
+                <controls:RadBusyIndicator.Animations>
+                    <common:RadDoubleAnimation Easing="Linear"
+                                           PropertyPath="Rotation"
+                                           RepeatForever="True"
+                                           Target="{Reference Name=image}"
+                                           From="0"
+                                           To="360" />
+                </controls:RadBusyIndicator.Animations>
+                <controls:RadBusyIndicator.BusyContent>
+                    <Image x:Name="image"
+                       AnchorX="0.5"
+                       AnchorY="0.5"
+                       Aspect="AspectFit"
+                       HeightRequest="200"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       WidthRequest="200">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource"
+                                    Android="tyre.png"
+                                    WinPhone="Assets\tyre.png"
+                                    iOS="tyre.png" />
+                        </Image.Source>
+                    </Image>
+                </controls:RadBusyIndicator.BusyContent>
+            </controls:RadBusyIndicator>
+        </Grid>
+    </Grid>
+</ContentPage>

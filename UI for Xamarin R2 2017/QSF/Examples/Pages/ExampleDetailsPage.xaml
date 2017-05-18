@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             x:Class="Examples.ExampleDetailsPage"
+             BackgroundColor="#F8F8F8">
+  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+    <Grid.RowDefinitions>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                      iOS="44"
+                      Android="56" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!--Navugation Bar-->
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid x:Name="backButton"
+               Grid.ColumnSpacing="0"
+               Grid.RowSpacing="0"
+               Padding="16, 0, 0, 0"
+               HeightRequest="48">
+        <Grid.WidthRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+                      iOS="20"
+                      Android="48" />
+        </Grid.WidthRequest>
+        <Image Source="ic_arrow_back.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Center"/>
+      </Grid>
+      <Grid x:Name="backLableHolder" Grid.Column="1">
+        <Label x:Name="backLabel" HorizontalOptions="Start" Text="Back to all examples" TextColor="#014F80" VerticalOptions="Center">
+          <Label.FontSize>
+            <OnPlatform x:TypeArguments="x:Double"
+                        Android="20"
+                        iOS="17"/>
+          </Label.FontSize>
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS>Helvetica-medium</OnPlatform.iOS>
+              <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+      </Grid>
+    </Grid>
+
+    <!--Background gradient image-->
+    <Image Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="background_normal.png"/>
+
+    <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0" x:Name="rootGrid" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition>
+          <RowDefinition.Height>
+            <OnPlatform x:TypeArguments="GridLength"
+                        iOS="132"
+                        Android="132" />
+          </RowDefinition.Height>
+        </RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Grid.Padding>
+          <OnPlatform x:TypeArguments="Thickness"
+                      iOS="16, 24, 16, 0"
+                      Android="16, 24, 16, 0" />
+        </Grid.Padding>
+        <Grid.RowDefinitions>
+          <!--Example title + Example description Row-->
+          <RowDefinition Height="*"/>
+          <!--Links List Row-->
+          <RowDefinition Height="116"/>
+        </Grid.RowDefinitions>
+
+        <!--This Grid is animated-->
+        <Grid x:Name="exampleDescriptionHolder" Grid.ColumnSpacing="0" Grid.RowSpacing="0" Grid.Row="0">
+          <Grid.RowDefinitions>
+            <!--ExampleTitle Row-->
+            <RowDefinition >
+              <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength"
+                        iOS="60"
+                        Android="65" />
+              </RowDefinition.Height>
+            </RowDefinition>
+            <!--ExampleDescription Row-->
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Grid.Row="0" >
+            <Grid.Padding>
+              <OnPlatform x:TypeArguments="Thickness"
+                  iOS="0, 0, 0, 24"
+                  Android="0, 0, 0, 20" />
+            </Grid.Padding>
+            <Label Text="{Binding ExampleTitle}" FontSize="32" TextColor="#000000" VerticalOptions="Start" HorizontalOptions="Start">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Helvetica-Light</OnPlatform.iOS>
+                  <OnPlatform.Android>Roboto-Light</OnPlatform.Android>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+          </Grid>
+
+          <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+            <Grid.Padding>
+              <OnPlatform x:TypeArguments="Thickness"
+                  iOS="0, 0, 0, 24"
+                  Android="0, 0, 0, 20" />
+            </Grid.Padding>
+            <ScrollView HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" >
+              <Label Text="{Binding Description}" TextColor="#1E323F" LineBreakMode="WordWrap">
+                <Label.FontSize>
+                  <OnPlatform x:TypeArguments="x:Double"
+                              iOS="15"
+                              Android="15" />
+                </Label.FontSize>
+              </Label>
+            </ScrollView>
+          </Grid>
+        </Grid>
+
+        <!--Links List-->
+        <Grid Grid.Row="1" Grid.ColumnSpacing="0" >
+          <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+          </Grid.RowDefinitions>
+          <Label x:Name="ViewExampleLink" Grid.Row="0" Text="View Example" TextColor="#1F5C88" >
+            <Label.FontSize>
+              <OnPlatform x:TypeArguments="x:Double"
+                          iOS="17"
+                          Android="14" />
+            </Label.FontSize>
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Helvetica-Medium</OnPlatform.iOS>
+                <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
+
+          <Label x:Name="ViewCodeLink" Grid.Row="1" Text="View Code" TextColor="#1F5C88" >
+            <Label.FontSize>
+              <OnPlatform x:TypeArguments="x:Double"
+                          iOS="17"
+                          Android="14"/>
+            </Label.FontSize>
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Helvetica-Medium</OnPlatform.iOS>
+                <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
+
+          <Label x:Name="DocumentationLink" Grid.Row="2" Text="Documentation" TextColor="#1F5C88" >
+            <Label.FontSize>
+              <OnPlatform x:TypeArguments="x:Double"
+                          iOS="17"
+                          Android="14"/>
+            </Label.FontSize>
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Helvetica-Medium</OnPlatform.iOS>
+                <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
+        </Grid>
+      </Grid>
+
+      <!--Images host-->
+      <Grid Grid.Row="1" Padding="0, 0, 0, 16" Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="8"/>
+          <ColumnDefinition Width="132"/>
+          <ColumnDefinition Width="8"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="1" Grid.ColumnSpan="3" x:Name="imagesClipHolder">
+          <StackLayout Orientation="Horizontal" Padding="8, 0, 0, 0">
+            <StackLayout Orientation="Horizontal" x:Name="directImageHost" StackLayout.Spacing="8"/>
+          </StackLayout>
+        </Grid>
+        
+        <Grid Grid.Column="2" HeightRequest="132" WidthRequest="132" Padding="10, 0, 0, 0">
+          <Image Source="ic_full_screen.png" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="End"/>
+        </Grid>
+      </Grid>
+
+      <!--Examples navigation-->
+      <Grid Grid.Row="1" Padding="0, 0, 0, 16" Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="8"/>
+          <ColumnDefinition Width="132"/>
+          <ColumnDefinition Width="8"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Previous button-->
+        <Grid HeightRequest="132" x:Name="prevButtonHolder" Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Button x:Name="prevButton" BackgroundColor="#B7D2D2" Clicked="previousExample" BorderRadius="1" BorderWidth="1" BorderColor="Transparent"/>
+          <Grid Padding="16, 8, 0, 8"  Grid.ColumnSpacing="0" Grid.RowSpacing="0" InputTransparent="True">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="prevExTitle" VerticalOptions="Start" HorizontalOptions="Start" TextColor="#1E323F" IsVisible="{Binding IsPreviousButtonEnabled}">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Helvetica-Light</OnPlatform.iOS>
+                  <OnPlatform.Android>Roboto-Medium</OnPlatform.Android>
+                </OnPlatform>
+              </Label.FontFamily>
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="12"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+
+            <Label Grid.Row="1" VerticalOptions="End" HorizontalOptions="Start" TextColor="#014F80" IsVisible="{Binding IsPreviousButtonEnabled}">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Helvetica-Bold</OnPlatform.iOS>
+                  <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+                </OnPlatform>
+              </Label.FontFamily>
+              <Label.Text>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Prev</OnPlatform.iOS>
+                  <OnPlatform.Android>PREV</OnPlatform.Android>
+                </OnPlatform>
+              </Label.Text>
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="14"
+                            Android="14"/>
+              </Label.FontSize>
+            </Label>
+
+            <Image Grid.Row="2" x:Name="prevExImage" HorizontalOptions="Start" VerticalOptions="Start"/>
+          </Grid>
+        </Grid>
+        <Grid HeightRequest="132" x:Name="previousButtonDisabledState" IsVisible="False" InputTransparent="False"/>
+
+        <!--Open chosen example button-->
+        <Button Grid.Column="2" BorderRadius="0" Clicked="chosenExampleTapped_Tapped" BackgroundColor="Transparent" BorderWidth="2" BorderColor="Red"/>
+        <!--<Grid Grid.Column="2" BackgroundColor="Transparent" x:Name="middleBtn"/>-->
+
+        <!--Next button-->
+        <Grid HeightRequest="132" Grid.Column="4" x:Name="nextButtonHolder" Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+          <Button x:Name="nextButton" BackgroundColor="#B7D2D2" Clicked="nextExample" BorderRadius="0" BorderWidth="0"/>
+          <Grid Padding="0, 8, 16, 8" Grid.ColumnSpacing="0" Grid.RowSpacing="0" InputTransparent="True">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="nextExTitle" VerticalOptions="Start" HorizontalOptions="EndAndExpand" TextColor="#1E323F" IsVisible="{Binding IsNextButtonEnabled}">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Helvetica-Light</OnPlatform.iOS>
+                  <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+                </OnPlatform>
+              </Label.FontFamily>
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="12"
+                            Android="14"/>
+              </Label.FontSize>
+            </Label>
+
+            <Label Grid.Row="1" VerticalOptions="End" HorizontalOptions="End" TextColor="#014F80" IsVisible="{Binding IsNextButtonEnabled}">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Helvetica-Bold</OnPlatform.iOS>
+                  <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+                </OnPlatform>
+              </Label.FontFamily>
+              <Label.Text>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.iOS>Next</OnPlatform.iOS>
+                  <OnPlatform.Android>NEXT</OnPlatform.Android>
+                </OnPlatform>
+              </Label.Text>
+              <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="14"
+                            Android="14" />
+              </Label.FontSize>
+            </Label>
+
+            <Image Grid.Row="2" x:Name="nextExImage" VerticalOptions="End" HorizontalOptions="End"/>
+          </Grid>
+        </Grid>
+        <Grid HeightRequest="132" Grid.Column="4" x:Name="nextButtonDisabledState" InputTransparent="False" IsVisible="False" Grid.ColumnSpacing="0" Grid.RowSpacing="0"/>
+      </Grid>
+    </Grid>
+  </Grid>
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<Application
+    x:Class="QSF.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Calendar="using:Telerik.UI.Xaml.Controls.Input.Calendar"
+    xmlns:local="using:QSF.UWP"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="CallendarAppointmentTemplate">
+                <ItemsControl ItemsSource="{Binding Appointments}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch">
+                                <Rectangle Width="10" Height="1" Fill="Silver" HorizontalAlignment="Right" Margin="5,5,5,0"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

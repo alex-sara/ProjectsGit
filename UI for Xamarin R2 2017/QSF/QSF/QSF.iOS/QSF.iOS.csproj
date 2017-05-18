@@ -1,0 +1,1462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{350ED605-C7FD-40F2-94E2-D051294F6565}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>QSF.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>QSFiOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <CodesignKey>iPhone Developer: Petia Vladova (59U9HR3J4Z)</CodesignKey>
+    <MtouchSdkVersion>10.0</MtouchSdkVersion>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>False</MtouchFloat32>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchSdkVersion>9.0</MtouchSdkVersion>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer: Petia Vladova (59U9HR3J4Z)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: Petia Vladova (59U9HR3J4Z)</CodesignKey>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <MtouchSdkVersion>9.0</MtouchSdkVersion>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+    <CodesignProvision>
+    </CodesignProvision>
+    <CodesignResourceRules />
+    <CodesignExtraArgs />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <BuildIpa>True</BuildIpa>
+    <CodesignKey>iPhone Developer: Petia Vladova (59U9HR3J4Z)</CodesignKey>
+    <MtouchSdkVersion>9.0</MtouchSdkVersion>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Developer: Petia Vladova (59U9HR3J4Z)</CodesignKey>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>QSF.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CodeViewerRenderer.cs" />
+    <Compile Include="CustomApplication.cs" />
+    <Compile Include="CustomizedLabelRenderer.cs" />
+    <Compile Include="DevModeService.cs" />
+    <Compile Include="DFDelegate.cs" />
+    <Compile Include="IOSDataFormRenderer.cs" />
+    <Compile Include="FileViewer.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Info.plist" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="DayViewCalendarRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Examples\Examples.csproj">
+      <Project>{fa006612-b229-48f8-9df9-599b501efef0}</Project>
+      <Name>Examples</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SkiaSharp, Version=1.55.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.1.55.1\lib\XamariniOS\SkiaSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms, Version=1.55.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.Forms.1.55.1\lib\XamariniOS\SkiaSharp.Views.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.iOS, Version=1.55.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.1.55.1\lib\XamariniOS\SkiaSharp.Views.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>..\..\..\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\Binaries\iOS\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\Binaries\Portable\Telerik.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_1.png" />
+    <BundleResource Include="Resources\screen_day_view.png" />
+    <BundleResource Include="Resources\screen_day_view%402x.png" />
+    <BundleResource Include="Resources\screen_day_view%403x.png" />
+    <BundleResource Include="Resources\screen_autocomplete_tokens%403x.png" />
+    <BundleResource Include="Resources\screen_busyindicator_customindicator%402x.png" />
+    <BundleResource Include="Resources\screen_busyindicator_customindicator%403x.png" />
+    <BundleResource Include="Resources\screen_busyindicator_gallery%402x.png" />
+    <BundleResource Include="Resources\screen_busyindicator_gallery%403x.png" />
+    <BundleResource Include="Resources\screen_dataform_reservations.png" />
+    <BundleResource Include="Resources\screen_dataform_reservations%402x.png" />
+    <BundleResource Include="Resources\screen_dataform_reservations%403x.png" />
+    <BundleResource Include="Resources\screen_gauge_activitydashboard%402x.png" />
+    <BundleResource Include="Resources\screen_gauge_activitydashboard%403x.png" />
+    <BundleResource Include="Resources\screen_gauge_gallery_horizontal%403x.png" />
+    <BundleResource Include="Resources\screen_gauge_gallery_radial%403x.png" />
+    <BundleResource Include="Resources\screen_gauge_gallery_vertical%403x.png" />
+    <BundleResource Include="Resources\screen_rating.png" />
+    <BundleResource Include="Resources\screen_rating%402x.png" />
+    <BundleResource Include="Resources\screen_rating%403x.png" />
+    <BundleResource Include="Resources\screen_segment_preview.png" />
+    <BundleResource Include="Resources\screen_segment_preview%402x.png" />
+    <BundleResource Include="Resources\screen_segment_preview%403x.png" />
+    <BundleResource Include="Resources\screen_spreadstream.png" />
+    <BundleResource Include="Resources\screen_spreadstream%402x.png" />
+    <BundleResource Include="Resources\screen_spreadstream%403x.png" />
+    <BundleResource Include="Resources\screen_tabview_restaurantmenu%402x.png" />
+    <BundleResource Include="Resources\screen_tabview_restaurantmenu%403x.png" />
+    <BundleResource Include="Resources\screen_zip_library.png" />
+    <BundleResource Include="Resources\screen_zip_library%402x.png" />
+    <BundleResource Include="Resources\screen_zip_library%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_3%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_3%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_4%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_5%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_6%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_7%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Breakfast0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Breakfast1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Breakfast2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Breakfast3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chef-hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chef-hat%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chef-hat%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cocktails0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cocktails1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cocktails2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cocktails3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Dessert0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dessert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dessert2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dessert3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Desserts0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Desserts1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Desserts2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Desserts3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hamburger-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-72%402x.png" />
+    <BundleResource Include="Resources\Icon-72.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Resources\ic_arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_back%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_back%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_next%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_next%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_prev%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_arrow_prev%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_menu%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_menu%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_see_all_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_see_all_arrow%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_see_all_arrow%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_view_example%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_view_example%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_view_example.png" />
+    <BundleResource Include="Resources\img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_5%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Paleo0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Paleo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Paleo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Paleo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\reorder_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\reorder_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\reorder_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\reorder_icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\reorder_icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sandwich0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sandwich1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sandwich2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sandwich3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scatter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scatter%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_area_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_bar_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_line_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_scatter_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sidedrawer_navdrawer_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sidedrawer_navdrawer_user%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wood_pattern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_menu_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_menu_white%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_reorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_reorder%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_reorder%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_delete%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_delete%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_fav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_fav%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_fav%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_fav1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_fav1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_selection_fav1%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\up_caret_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\up_caret_grey%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\up_caret_grey%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\up_caret_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\up_caret_white%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\up_caret_white%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gridLayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linearLayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_4%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_done%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_reorder_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_listview_reorder_delete%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_5%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\area_6%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bar_8%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_3%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\line_7%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_full_screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_full_screen%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background_normal%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_full_screen%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_area_chart%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_area_chart%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_bar_chart%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_bar_chart%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_calendar%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_calendar%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_line_chart%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_line_chart%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_layouts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_layouts%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_layouts%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_reorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_reorder%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_reorder%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_selection%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_listview_selection%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_scatter_chart%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_scatter_chart%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_sidedrawer_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_sidedrawer_settings%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_sidedrawer_settings%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_sidedrawer_sidedrawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_sidedrawer_sidedrawer%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sidedrawer_sidedrawer%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small-50%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie_1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie_2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_pie_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_view_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_view_info%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_view_info%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-Small%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie_1%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pie_2%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_pie_chart%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_pie_chart%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background_normal%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Date%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Date%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Guest_Number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Guest_Number%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Guest_Number%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Phone_Number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Phone_Number%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Phone_Number%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Guest_Name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Guest_Name%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Guest_Name%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Time%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Time%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Section.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Section%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Section%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Table_Number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Table_Number%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Table_Number%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Cancel%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Cancel%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Calendar_Header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Calendar_Header%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Calendar_Header%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Circle_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Circle_Background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataForm_Circle_Background%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_church_st_george_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_featherbed_nature_reserve_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_forbidden_city_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_forest_bulgaria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_georgetown_university.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_key_spices_indian_cuisine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_kustendil_bulgaria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_leopard_samburu_reserve.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_lioness_nakuru_national_park_kenya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_london_eye_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_maasai_mara_nature_reserve.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_madison_square_garden_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_mahamuni_pagoda_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_miraflores_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_museum_qin_terracotta_warriors_horses_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_panichishte_bulgaria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_rent_a_car_or_taxi_in_cuba.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_roman_colosseum_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_shwedagon_pagoda_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_street_shanghai_china.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_sunny_beach_bulgaria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_sunny_beach_bulgaria_balloon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_titicaca_lake_attraction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_tsarevets_sound_and_light_veliko_tarnovo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_universal_studios_orlando_harry_potter_theme_park.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_beach.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_buenos_aires_hotel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_bulgaria_sunny_beach.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_bulgaria_tevno_lake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_castel_sant_angelo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_leopard_samburu_reserve%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_lioness_nakuru_national_park_kenya%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_london_eye_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_maasai_mara_nature_reserve%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_madison_square_garden_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_mahamuni_pagoda_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_miraflores_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_museum_qin_terracotta_warriors_horses_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_panichishte_bulgaria%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_rent_a_car_or_taxi_in_cuba%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_roman_colosseum_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_shwedagon_pagoda_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_street_shanghai_china%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_sunny_beach_bulgaria%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_sunny_beach_bulgaria_balloon%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_titicaca_lake_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_tsarevets_sound_and_light_veliko_tarnovo%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_universal_studios_orlando_harry_potter_theme_park%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_beach%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_buenos_aires_hotel%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_bulgaria_sunny_beach%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_bulgaria_tevno_lake%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_castel_sant_angelo%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_church_st_george_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_featherbed_nature_reserve_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_forbidden_city_attraction%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_forest_bulgaria%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_georgetown_university%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_key_spices_indian_cuisine%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_kustendil_bulgaria%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_autocomplete_tokens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_autocomplete_tokens%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_search%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autocomplete_tokens_search%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_activitydashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_gallery_radial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_gallery_radial%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pdf_file%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pdf_file%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pdf_file%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\png_file%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\png_file%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\png_file%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\selected_item%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\selected_item%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\selected_item%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\docx_file%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\docx_file%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\docx_file%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\xlsx_file%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\xlsx_file%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\xlsx_file%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_gallery_horizontal%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_gallery_vertical%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_gallery_horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_gauge_gallery_vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gauge_gallery_item_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_busyindicator_gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tyre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_busyindicator_customindicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Explore_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Explore%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Explore_Selected%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Explore%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Explore_Selected%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Saved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Saved_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Saved%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Saved_Selected%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Saved%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Saved_Selected%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_ShoppingList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_ShoppingList_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_ShoppingList%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_ShoppingList_Selected%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_ShoppingList%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_ShoppingList_Selected%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_BlueberryWaffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_BulgarianTortilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_FrenchBread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_HealthyBreakfast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Indian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Lager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_MediterraneanFish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_PorkWithBlueberries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Sausages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_SpinachPotatoNestBites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Tiramisu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_WhiteWine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Wine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Ale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_AmericanPancakes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_BelgianChocolate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tabView_Restaurant_Heart_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rating_restaurant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rating_restaurant%402x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rating_restaurant%403x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\busy_indicator_gallery_animation8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\screen_tabview_restaurantmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_tile%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_tile%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_tile%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\small_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_snack%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_dinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_dinner%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_dinner%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_drinks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_drinks%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_drinks%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_snack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_snack%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_dinner_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_dinner_small%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_dinner_small%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_drinks_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_drinks_small%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_drinks_small%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_snack_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_snack_small%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\segment_snack_small%403x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <!--Custom PropertyGroup for accessing the code of the examples-->
+  <PropertyGroup>
+    <PrepareResourceNamesDependsOn>
+      IncludeFilesInResources;
+      $(PrepareResourceNamesDependsOn)
+    </PrepareResourceNamesDependsOn>
+  </PropertyGroup>
+  <Target Name="IncludeFilesInResources">
+    <ItemGroup>
+      <!--Describes folder which should be copied from the Examples Assembly.
+          The **\* structure  recursively defines all files (*) in all subfolders (**) of the Calendar examples.-->
+      <SourceResourceFiles Include="..\..\Examples\AutoComplete\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\AutoComplete</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\BusyIndicator\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\BusyIndicator</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Calendar\**\*">
+        <!--This is the folder where the files will be copied to (part of this assembly).-->
+        <RelativeOutputDirectory>Resources\CodeFiles\Calendar</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Chart\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\Chart</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Gauge\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\Gauge</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\DataForm\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\DataForm</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\ListView\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\ListView</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\SideDrawer\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\SideDrawer</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\SpreadStreamProcessing\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\SpreadStreamProcessing</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Rating\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\Rating</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\TabView\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\TabView</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\ZipLibrary\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\ZipLibrary</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\SegmentedControl\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\SegmentedControl</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <!--This ItemGroup should be extended when new folder in the Examples assembly with examples is added.-->
+    </ItemGroup>
+    <!--Exacutes copy operation over the above described source and destination folders.-->
+    <Copy SourceFiles="@(SourceResourceFiles)" DestinationFolder="%(RelativeOutputDirectory)\%(RecursiveDir)" />
+    <ItemGroup>
+      <!--Includes all copied files as EmbeddedResource in the current assembly.
+          This is required for visualizing the code in the respective QSF Page.-->
+      <EmbeddedResource Include="%(SourceResourceFiles.RelativeOutputDirectory)\**\*" />
+    </ItemGroup>
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <IsDesktopBuild Condition="'$(IsDesktopBuild)' == ''">true</IsDesktopBuild>
+  </PropertyGroup>
+  <Target Condition="'$(IsDesktopBuild)' == 'false'" Name="AfterBuild">
+    <Message Text="$(IpaPackagePath)" />
+    <Message Text="Copy ipa file..." />
+    <CopyFileFromMac SessionId="$(BuildSessionId)" File="$(IpaPackagePath)$(_AppBundleName).ipa" TargetFile="$(OutputPath)\$(_AppBundleName).ipa" />
+  </Target>
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

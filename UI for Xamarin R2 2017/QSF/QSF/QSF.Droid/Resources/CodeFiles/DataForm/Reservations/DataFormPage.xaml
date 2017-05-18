@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:examples="clr-namespace:Examples;assembly=Examples"
+  xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+  xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+  xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+  xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+  xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+  x:Class="Examples.DataForm.Reservations.DataFormPage">
+  <Grid Grid.ColumnSpacing="0"
+    Grid.RowSpacing="0"
+    BackgroundColor="White">
+    <Grid.Behaviors>
+      <examples:CustomBehavior />
+    </Grid.Behaviors>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <!-- header -->
+      <Grid BackgroundColor="#C73339"
+        RowSpacing="0"
+        ColumnSpacing="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition>
+            <ColumnDefinition.Width>
+              <OnPlatform x:TypeArguments="GridLength">
+                <OnPlatform.iOS>14</OnPlatform.iOS>
+                <OnPlatform.Android>20</OnPlatform.Android>
+                <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
+              </OnPlatform>
+            </ColumnDefinition.Width>
+          </ColumnDefinition>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.Padding>
+          <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>15,15,8,15</OnPlatform.iOS>
+            <OnPlatform.Android>16,16,8,16</OnPlatform.Android>
+            <OnPlatform.WinPhone>16,16,8,16</OnPlatform.WinPhone>
+          </OnPlatform>
+        </Grid.Padding>
+        <Label Text="{Binding PageTitle}"
+          FontSize="15"
+          TextColor="White"
+          VerticalOptions="Center">
+          <Grid.Column>
+            <OnPlatform x:TypeArguments="x:Int32">
+              <OnPlatform.iOS>0</OnPlatform.iOS>
+              <OnPlatform.Android>1</OnPlatform.Android>
+              <OnPlatform.WinPhone>1</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Grid.Column>
+          <Grid.ColumnSpan>
+            <OnPlatform x:TypeArguments="x:Int32">
+              <OnPlatform.iOS>3</OnPlatform.iOS>
+              <OnPlatform.Android>1</OnPlatform.Android>
+              <OnPlatform.WinPhone>1</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Grid.ColumnSpan>
+          <Label.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+              <OnPlatform.iOS>0</OnPlatform.iOS>
+              <OnPlatform.Android>20, 0, 16, 0</OnPlatform.Android>
+              <OnPlatform.WinPhone>20, 0, 16, 0</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Label.Margin>
+          <Label.HorizontalTextAlignment>
+            <OnPlatform x:TypeArguments="TextAlignment">
+              <OnPlatform.iOS>Center</OnPlatform.iOS>
+              <OnPlatform.Android>Start</OnPlatform.Android>
+              <OnPlatform.WinPhone>Start</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Label.HorizontalTextAlignment>
+        </Label>
+        <Image x:Name="cancelButton"
+          Source="DataForm_Cancel.png"
+          HorizontalOptions="Center"
+          VerticalOptions="Center"
+          Aspect="AspectFit">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource">
+              <OnPlatform.iOS>DataForm_Cancel.png</OnPlatform.iOS>
+              <OnPlatform.Android>DataForm_Cancel.png</OnPlatform.Android>
+              <OnPlatform.WinPhone>Assets\DataForm_Cancel.png</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Image.Source>
+          <Image.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double">
+              <OnPlatform.iOS>14</OnPlatform.iOS>
+              <OnPlatform.Android>20</OnPlatform.Android>
+              <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Image.HeightRequest>
+          <Image.WidthRequest>
+            <OnPlatform x:TypeArguments="x:Double">
+              <OnPlatform.iOS>14</OnPlatform.iOS>
+              <OnPlatform.Android>20</OnPlatform.Android>
+              <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
+            </OnPlatform>
+          </Image.WidthRequest>
+        </Image>
+        <Label x:Name="doneButton"
+          TextColor="White"
+          Text="Done"
+          HorizontalOptions="End"
+          Grid.Column="2"
+          FontSize="16"
+          VerticalOptions="Center">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS>Helvetica-medium</OnPlatform.iOS>
+              <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+      </Grid>
+      <!-- form -->
+    <telerikInput:RadDataForm x:Name="dataForm"
+        Source="{Binding FormSource}"
+        Grid.Row="1"
+        CommitMode="Manual"
+        ValidationMode="Immediate">
+        <telerikInput:RadDataForm.Margin>
+          <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>15,0,8,0</OnPlatform.iOS>
+            <OnPlatform.Android>16,0,4,0</OnPlatform.Android>
+            <OnPlatform.WinPhone>16,0,4,0</OnPlatform.WinPhone>
+          </OnPlatform>
+        </telerikInput:RadDataForm.Margin>
+      </telerikInput:RadDataForm>
+      <Label TextColor="#C73339"
+        HorizontalOptions="Start"
+        Grid.Row="2"
+        x:Name="cancelReservationButton">
+        <Label.Text>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS>Cancel reservation</OnPlatform.iOS>
+            <OnPlatform.Android>CANCEL RESERVATION</OnPlatform.Android>
+            <OnPlatform.WinPhone>Cancel reservation</OnPlatform.WinPhone>
+          </OnPlatform>
+        </Label.Text>
+        <Label.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS>Helvetica-bold</OnPlatform.iOS>
+            <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+          </OnPlatform>
+        </Label.FontFamily>
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double">
+            <OnPlatform.iOS>15</OnPlatform.iOS>
+            <OnPlatform.Android>12</OnPlatform.Android>
+          </OnPlatform>
+        </Label.FontSize>
+        <Label.Margin>
+          <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>15,5,0,21</OnPlatform.iOS>
+            <OnPlatform.Android>52,20,0,24</OnPlatform.Android>
+            <OnPlatform.WinPhone>52,20,0,24</OnPlatform.WinPhone>
+          </OnPlatform>
+        </Label.Margin>
+      </Label>
+    </Grid>
+  </Grid>
+</ContentPage>

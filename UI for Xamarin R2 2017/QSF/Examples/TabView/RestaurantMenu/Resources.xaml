@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Examples.TabView.RestaurantMenu.Resources"
+                    xmlns:examples="clr-namespace:Examples;assembly=Examples"
+                    xmlns:local="clr-namespace:Examples.TabView.RestaurantMenu">
+
+  <Color x:Key="unselectedColor">#FF86A0A3</Color>
+  <Color x:Key="lightGray">#FFF8F8F8</Color>
+  <Color x:Key="orange">#FFFF5614</Color>
+  <Color x:Key="accent">#FF24BFD3</Color>
+  <examples:UwpImageSourceConverter x:Key="uwpImageSourceConverter" />
+
+  <local:BooleanValueConverter x:Key="booleanOrangeConverter" 
+                               TrueValue="{StaticResource orange}" 
+                               FalseValue="{StaticResource unselectedColor}" />
+
+  <local:BooleanValueConverter x:Key="booleanAccentConverter"
+                               TrueValue="{StaticResource accent}"
+                               FalseValue="{StaticResource unselectedColor}" />
+
+  <local:BooleanValueConverter x:Key="booleanHeartConverter">
+    <local:BooleanValueConverter.TrueValue>
+      <OnPlatform x:TypeArguments="ImageSource">
+        <OnPlatform.iOS>tabView_Restaurant_Heart_Selected.png</OnPlatform.iOS>
+        <OnPlatform.Android>tabView_Restaurant_Heart_Selected.png</OnPlatform.Android>
+        <OnPlatform.WinPhone>Assets\tabView_Restaurant_Heart_Selected.png</OnPlatform.WinPhone>
+      </OnPlatform>
+    </local:BooleanValueConverter.TrueValue>
+    <local:BooleanValueConverter.FalseValue>
+      <OnPlatform x:TypeArguments="ImageSource">
+        <OnPlatform.iOS>tabView_Restaurant_Heart.png</OnPlatform.iOS>
+        <OnPlatform.Android>tabView_Restaurant_Heart.png</OnPlatform.Android>
+        <OnPlatform.WinPhone>Assets\tabView_Restaurant_Heart.png</OnPlatform.WinPhone>
+      </OnPlatform>
+    </local:BooleanValueConverter.FalseValue>
+  </local:BooleanValueConverter>
+
+  <ControlTemplate x:Key="orangeControlTemplate">
+    <Grid BackgroundColor="Transparent">
+      <BoxView IsVisible="{TemplateBinding IsSelected}"
+               BackgroundColor="{StaticResource orange}"
+               VerticalOptions="End"
+               HeightRequest="2" />
+      <Label Text="{TemplateBinding Text}"
+             TextColor="{TemplateBinding IsSelected, Converter={StaticResource booleanOrangeConverter}}"
+             HorizontalTextAlignment="Center"
+             Margin="0, 0, 0, 8" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate x:Key="iconControlTemplate">
+    <Grid BackgroundColor="Transparent" RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Image Source="{Binding Icon, Converter={StaticResource uwpImageSourceConverter}}"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             WidthRequest="16"
+             HeightRequest="16"
+             Margin="0, 4, 0, 6" />
+      <Label Grid.Row="1"
+             Text="{TemplateBinding Text}"
+             TextColor="{TemplateBinding IsSelected, Converter={StaticResource booleanAccentConverter}}"
+             FontSize="10"
+             HorizontalTextAlignment="Center"
+             Margin="0, 0, 0, 6" />
+    </Grid>
+  </ControlTemplate>
+  
+</ResourceDictionary>

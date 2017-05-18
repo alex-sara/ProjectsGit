@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.ExampleDetailsPageUWP">
+  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="64"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    
+    <!--Background gradient image-->
+    <Image Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="Assets\background_normal.png"/>
+    
+    <!--Navugation Bar-->
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="28"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid x:Name="backButton"
+            Grid.ColumnSpacing="0"
+            Grid.RowSpacing="0" 
+            BackgroundColor="Transparent"
+            Padding="12, 0, 0, 0"
+            HeightRequest="28">
+        <Image HorizontalOptions="Start"
+               InputTransparent="True"
+               Source="Assets\ic_arrow_back.png"
+               VerticalOptions="Center"/>
+      </Grid>
+      
+      <Grid x:Name="backLableHolder" Grid.Column="1" Padding="16, 0, 0, 0">
+        <Label x:Name="backLabel" HorizontalOptions="Start" Text="Back to all examples" TextColor="#000000" VerticalOptions="Center" FontSize="20"/>
+      </Grid>
+    </Grid>
+
+
+
+    <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0" x:Name="rootGrid" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="156"/>
+      </Grid.RowDefinitions>
+
+      <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="12, 56, 12, 0">
+        <Grid.RowDefinitions>
+          <!--Example title + Example description Row-->
+          <RowDefinition Height="*"/>
+          <!--Links List Row-->
+          <RowDefinition Height="116"/>
+        </Grid.RowDefinitions>
+
+        <!--This Grid is animated-->
+        <Grid x:Name="exampleDescriptionHolder" Grid.ColumnSpacing="0" Grid.RowSpacing="0" Grid.Row="0">
+          <Grid.RowDefinitions>
+            <!--ExampleTitle Row-->
+            <RowDefinition Height="65" />
+            <!--ExampleDescription Row-->
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Grid.Row="0" Padding="0, 0, 0, 20">
+            <Label Text="{Binding ExampleTitle}" FontSize="32" TextColor="#000000" VerticalOptions="Start" HorizontalOptions="Start" FontFamily="/Assets/Fonts/segoeuil.ttf#Segoe UI" />
+          </Grid>
+
+          <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="0, 0, 0, 20">
+            <ScrollView HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" >
+              <Label Text="{Binding Description}" TextColor="#1E323F" LineBreakMode="WordWrap" FontSize="18" />
+            </ScrollView>
+          </Grid>
+        </Grid>
+
+        <!--Links List-->
+        <Grid Grid.Row="1" Grid.ColumnSpacing="0" >
+          <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+          </Grid.RowDefinitions>
+          <Label x:Name="ViewExampleLink" Grid.Row="0" Text="View Example" FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI" TextColor="#1F5C88" FontSize="15" />
+          <Label x:Name="ViewCodeLink" Grid.Row="1" Text="View Code" FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI" TextColor="#1F5C88" FontSize="15" />
+          <Label x:Name="DocumentationLink" Grid.Row="2" Text="Documentation" FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI" TextColor="#1F5C88" FontSize="15" />
+        </Grid>
+      </Grid>
+
+      <!--Images host-->
+      <Grid Grid.Row="1" Padding="0, 0, 0, 24" Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="12"/>
+          <ColumnDefinition Width="132"/>
+          <ColumnDefinition Width="12"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Grid.ColumnSpan="3" IsClippedToBounds="True">
+          <StackLayout Orientation="Horizontal" Padding="12, 0, 0, 0">
+            <StackLayout Orientation="Horizontal" x:Name="directImageHost" StackLayout.Spacing="14"/>
+          </StackLayout>
+        </Grid>
+        <Grid Grid.Column="2" HeightRequest="28"  Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+          <Image HeightRequest="28" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="End" Source="Assets\ic_full_screen.png" Margin="1, 1, 2, 2"/>
+        </Grid>
+
+      </Grid>
+
+      <!--Examples navigation-->
+      <Grid Grid.Row="1" Padding="0, 0, 0, 24" Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="12"/>
+          <ColumnDefinition Width="132"/>
+          <ColumnDefinition Width="12"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Previous button-->
+        <Grid x:Name="prevButtonHolder" Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="0">
+          <Button x:Name="prevButton" BackgroundColor="#B7D2D2" Clicked="previousExample" BorderRadius="0" />
+          <Grid Padding="12, 12, 0, 8"  Grid.ColumnSpacing="0" Grid.RowSpacing="0"  InputTransparent="True">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="18"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="prevExTitle" VerticalOptions="Start" FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI" HorizontalOptions="Start" TextColor="#1E323F" IsVisible="{Binding IsPreviousButtonEnabled}" FontSize="14" />
+            <Label Grid.Row="1" VerticalOptions="End" HorizontalOptions="Start" TextColor="#014F80" IsVisible="{Binding IsPreviousButtonEnabled}" Text="Prev" FontFamily="/Assets/Fonts/segoeuib.ttf#Segoe UI" FontSize="14"/>
+            <Grid Grid.Row="2">
+              <Image Aspect="AspectFit" x:Name="prevExImage" HorizontalOptions="Start" VerticalOptions="End" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid x:Name="previousButtonDisabledState" IsVisible="False" InputTransparent="False"/>
+
+        <!--Open chosen example button-->
+        <Button Grid.Column="2" BorderRadius="0" Clicked="chosenExampleTapped_Tapped" BackgroundColor="Transparent"/>
+
+        <!--Next button-->
+        <Grid Grid.Column="4" x:Name="nextButtonHolder" Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="0">
+          <Button x:Name="nextButton" BackgroundColor="#B7D2D2" Clicked="nextExample" BorderRadius="0"/>
+          <Grid Padding="0, 12, 12, 8" Grid.ColumnSpacing="0" Grid.RowSpacing="0"  InputTransparent="True">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="18"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="nextExTitle" VerticalOptions="Start" HorizontalOptions="End" TextColor="#1E323F" IsVisible="{Binding IsNextButtonEnabled}" FontSize="14" FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI"/>
+            <Label Grid.Row="1" VerticalOptions="End" HorizontalOptions="End" TextColor="#014F80" IsVisible="{Binding IsNextButtonEnabled}" Text="Next" FontSize="14" FontFamily="/Assets/Fonts/segoeuib.ttf#Segoe UI" />
+            <Grid Grid.Row="2">
+              <Image Aspect="AspectFit" x:Name="nextExImage" VerticalOptions="End" HorizontalOptions="End"/>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid HeightRequest="156" Grid.Column="4" x:Name="nextButtonDisabledState" InputTransparent="False" IsVisible="False" Grid.ColumnSpacing="0" Grid.RowSpacing="0"/>
+      </Grid>
+    </Grid>
+  </Grid>
+</ContentPage>

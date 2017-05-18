@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.TabView.RestaurantMenu.ExploreItemsView"
+             xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:local="clr-namespace:Examples.TabView.RestaurantMenu">
+
+  <VisualElement.Resources>
+    <ResourceDictionary MergedWith="local:Resources">
+      <DataTemplate x:Key="itemTemplate">
+        <telerikListView:ListViewTemplateCell>
+          <telerikListView:ListViewTemplateCell.View>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Image Source="{Binding Image, Converter={StaticResource uwpImageSourceConverter}}"
+                     Aspect="AspectFill" />
+              <Label Grid.Row="1"
+                     Text="{Binding Name}"
+                     TextColor="{StaticResource unselectedColor}" />
+            </Grid>
+          </telerikListView:ListViewTemplateCell.View>
+        </telerikListView:ListViewTemplateCell>
+      </DataTemplate>
+      <DataTemplate x:Key="itemTemplateWithSelection">
+        <telerikListView:ListViewTemplateCell>
+          <telerikListView:ListViewTemplateCell.View>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Image Source="{Binding Image, Converter={StaticResource uwpImageSourceConverter}}"
+                     Aspect="AspectFill" />
+              <Image Source="{Binding IsSaved, Converter={StaticResource booleanHeartConverter}}"
+                     WidthRequest="16"
+                     HeightRequest="16"
+                     HorizontalOptions="End"
+                     VerticalOptions="Start"
+                     Margin="0, 6, 6, 0" />
+              <Label Grid.Row="1"
+                     Text="{Binding Name}"
+                     TextColor="{StaticResource unselectedColor}" />
+            </Grid>
+          </telerikListView:ListViewTemplateCell.View>
+        </telerikListView:ListViewTemplateCell>
+      </DataTemplate>
+    </ResourceDictionary>
+  </VisualElement.Resources>
+
+  <telerikDataControls:RadListView x:Name="listViewImages"
+                                   SelectionMode="None"
+                                   ItemsSource="{Binding}"
+                                   SizeChanged="ListViewImages_SizeChanged">
+    <telerikDataControls:RadListView.Margin>
+      <OnPlatform x:TypeArguments="Thickness">
+        <OnPlatform.iOS>10,10,10,10</OnPlatform.iOS>
+      </OnPlatform>
+    </telerikDataControls:RadListView.Margin>
+    <telerikDataControls:RadListView.ItemStyle>
+      <telerikListView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+    </telerikDataControls:RadListView.ItemStyle>
+    <telerikDataControls:RadListView.LayoutDefinition>
+      <telerikListView:ListViewGridLayout Orientation="Vertical"
+                                          SpanCount="2"
+                                          HorizontalItemSpacing="6">
+        <telerikListView:ListViewGridLayout.VerticalItemSpacing>
+          <OnPlatform x:TypeArguments="x:Double" Android="18" WinPhone="6" iOS="12"  />          
+        </telerikListView:ListViewGridLayout.VerticalItemSpacing>
+      </telerikListView:ListViewGridLayout>
+    </telerikDataControls:RadListView.LayoutDefinition>
+  </telerikDataControls:RadListView>
+</ContentView>

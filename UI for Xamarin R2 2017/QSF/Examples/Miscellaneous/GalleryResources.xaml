@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:examples="clr-namespace:Examples;assembly=Examples"
+                    xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+                    xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+                    xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+                    x:Class="Examples.GalleryResources">
+
+  <examples:UwpImageSourceConverter x:Key="UwpImageSourceConverter" />
+  <Color x:Key="galleryItemsList_BackgroundColor">#F1F1F1</Color>
+  <Color x:Key="galleryItemsList_ItemBorderColor">#D6D5D5</Color>
+  <listView:ListViewItemStyle x:Key="galleryItemsList_ItemStyle" BorderWidth="2" BorderLocation="Right" BorderColor="{StaticResource galleryItemsList_ItemBorderColor}" BackgroundColor="{StaticResource galleryItemsList_BackgroundColor}" />
+  <listView:ListViewItemStyle x:Key="galleryItemsList_PressedItemStyle" BorderWidth="2" BorderLocation="Right" BorderColor="{StaticResource galleryItemsList_ItemBorderColor}" BackgroundColor="{StaticResource galleryItemsList_BackgroundColor}" />
+  <listView:ListViewItemStyle x:Key="galleryItemsList_SelectedItemStyle" BorderWidth="2" BorderLocation="Right" BorderColor="{StaticResource galleryItemsList_ItemBorderColor}" BackgroundColor="White" />
+  <listView:ListViewLinearLayout x:Key="galleryItemsList_LayoutDefinition" Orientation="Horizontal" ItemLength="70" />
+  <DataTemplate x:Key="galleryItemsList_ImageItemTemplate">
+    <listView:ListViewTemplateCell>
+      <listView:ListViewTemplateCell.View>
+        <Grid>
+          <Image Source="{Binding Image, Converter={StaticResource UwpImageSourceConverter}}"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="4" />
+        </Grid>
+      </listView:ListViewTemplateCell.View>
+    </listView:ListViewTemplateCell>
+  </DataTemplate>
+  <Style x:Key="galleryItemsListStyle" TargetType="telerikDataControls:RadListView">
+    <Setter Property="BackgroundColor" Value="{StaticResource galleryItemsList_BackgroundColor}" />
+    <Setter Property="ItemStyle" Value="{StaticResource galleryItemsList_ItemStyle}" />
+    <Setter Property="PressedItemStyle" Value="{StaticResource galleryItemsList_PressedItemStyle}" />
+    <Setter Property="SelectedItemStyle" Value="{StaticResource galleryItemsList_SelectedItemStyle}" />
+    <Setter Property="LayoutDefinition" Value="{StaticResource galleryItemsList_LayoutDefinition}" />
+    <Setter Property="ItemTemplate" Value="{StaticResource galleryItemsList_ImageItemTemplate}" />
+    <Setter Property="MinimumHeightRequest" Value="70" />
+  </Style>
+  <OnPlatform x:Key="labelHeader_FontSize" x:TypeArguments="x:Double" iOS="10" Android="14" WinPhone="14" />
+  <OnPlatform x:Key="labelHeader_FontFamily" x:TypeArguments="x:String" iOS="Helvetica-Bold" Android="sans-serif-medium" />
+  <Style x:Key="labelHeaderStyle" TargetType="Label">
+    <Setter Property="TextColor" Value="#757575" />
+    <Setter Property="HorizontalOptions" Value="Center" />
+    <Setter Property="FontSize" Value="{StaticResource labelHeader_FontSize}" />
+    <Setter Property="FontFamily" Value="{StaticResource labelHeader_FontFamily}" />
+  </Style>
+</ResourceDictionary>

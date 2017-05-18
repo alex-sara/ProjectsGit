@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Examples.StartPageWUP"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:local="clr-namespace:Examples;assembly=Examples"
+             xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives">
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <local:UwpImageSourceConverter x:Key="UwpImageSourceConverter" />
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Image Aspect="AspectFill"
+               HorizontalOptions="FillAndExpand"
+               Source="Assets\background_normal.png"
+               VerticalOptions="FillAndExpand" />
+        <telerikPrimitives:RadSideDrawer x:Name="homeScreenDrawer"
+                                         DrawerLength="220"
+                                         DrawerLocation="Bottom"
+                                         DrawerTransitionDuration="0.250"
+                                         DrawerTransitionFadeOpacity="1"
+                                         DrawerTransitionType="SlideInOnTop"
+                                         HorizontalOptions="Fill"
+                                         IsOpen="{Binding IsOpen, Mode=TwoWay}"
+                                         VerticalOptions="FillAndExpand">
+            <telerikPrimitives:RadSideDrawer.MainContent>
+                <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Margin="0,0,0,30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Application Title  -->
+                    <Grid Grid.Row="0"
+                          Padding="12,0,0,0"
+                          Grid.ColumnSpacing="0"
+                          Grid.RowSpacing="0">
+
+                        <Label x:Name="headerLabel"
+                               FontFamily="/Assets/Fonts/segoeuisl.ttf#Segoe UI"
+                               FontSize="20"
+                               HorizontalOptions="Start"
+                               Text="Progress® Telerik® UI for Xamarin"
+                               TextColor="#1E323F"
+                               VerticalOptions="Center" />
+                    </Grid>
+
+                    <Grid Grid.Row="1"
+                          Grid.ColumnSpacing="0"
+                          Grid.RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Padding="12,0,0,16"
+                              Grid.ColumnSpacing="0"
+                              Grid.RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI"
+                                   FontSize="15"
+                                   HorizontalOptions="Start"
+                                   Text="FEATURED EXAMPLES"
+                                   TextColor="#014F80"
+                                   VerticalOptions="Center" />
+                            <Grid x:Name="seeAllButton"
+                                  Grid.Column="1"
+                                  Padding="0,0,12,0"
+                                  BackgroundColor="Transparent"
+                                  Grid.ColumnSpacing="8"
+                                  Grid.RowSpacing="0"
+                                  HorizontalOptions="EndAndExpand">
+                                <Label FontFamily="/Assets/Fonts/segoeuib.ttf#Segoe UI"
+                                       FontSize="12"
+                                       InputTransparent="True"
+                                       Text="SEE ALL"
+                                       TextColor="#1E323F"
+                                       VerticalOptions="CenterAndExpand" />
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="1"
+                              BackgroundColor="Transparent"
+                              Grid.ColumnSpacing="0"
+                              Grid.RowSpacing="0">
+                            <telerikDataControls:RadListView BackgroundColor="Transparent"
+                                                             HeightRequest="160"
+                                                             ItemTapped="ExampleTapped"
+                                                             ItemsSource="{Binding FeaturedExamplesList}">
+                                <telerikDataControls:RadListView.ItemStyle>
+                                    <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+                                </telerikDataControls:RadListView.ItemStyle>
+                                <telerikDataControls:RadListView.SelectedItemStyle>
+                                    <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+                                </telerikDataControls:RadListView.SelectedItemStyle>
+                                <telerikDataControls:RadListView.PressedItemStyle>
+                                    <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+                                </telerikDataControls:RadListView.PressedItemStyle>
+                                <telerikDataControls:RadListView.LayoutDefinition>
+                                    <listView:ListViewLinearLayout HorizontalItemSpacing="0"
+                                                                   ItemLength="145"
+                                                                   Orientation="Horizontal" />
+                                </telerikDataControls:RadListView.LayoutDefinition>
+                                <telerikDataControls:RadListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <listView:ListViewTemplateCell>
+                                            <listView:ListViewTemplateCell.View>
+                                                <StackLayout Padding="12,0,0,0" StackLayout.Spacing="8">
+                                                    <Image HeightRequest="135"
+                                                           HorizontalOptions="Start"
+                                                           Source="{Binding ImageSourceUri, Converter={StaticResource UwpImageSourceConverter}}"
+                                                           VerticalOptions="Center" />
+                                                    <Label FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI"
+                                                           FontSize="15"
+                                                           HorizontalOptions="Start"
+                                                           Text="{Binding UserFriendlyTitle}"
+                                                           TextColor="#1E323F" />
+                                                </StackLayout>
+                                            </listView:ListViewTemplateCell.View>
+                                        </listView:ListViewTemplateCell>
+                                    </DataTemplate>
+                                </telerikDataControls:RadListView.ItemTemplate>
+                            </telerikDataControls:RadListView>
+                        </Grid>
+
+                        <Grid Grid.Row="2"
+                              Padding="12,32,0,12"
+                              Grid.ColumnSpacing="0"
+                              Grid.RowSpacing="0">
+                            <Label FontFamily="/Assets/Fonts/seguisb.ttf#Segoe UI"
+                                   FontSize="14"
+                                   Text="ALL CONTROLS"
+                                   TextColor="#014F80"
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <telerikDataControls:RadListView x:Name="allControlsList"
+                                                             BackgroundColor="Transparent"
+                                                             ItemTapped="ControlTapped"
+                                                             ItemsSource="{Binding AllControlsList}">
+                                <telerikDataControls:RadListView.ItemStyle>
+                                    <listView:ListViewItemStyle BackgroundColor="Transparent"
+                                                                BorderColor="#C2D5DB"
+                                                                BorderLocation="Bottom"
+                                                                BorderWidth="1" />
+                                </telerikDataControls:RadListView.ItemStyle>
+                                <telerikDataControls:RadListView.SelectedItemStyle>
+                                    <listView:ListViewItemStyle BackgroundColor="Transparent"
+                                                                BorderColor="#C2D5DB"
+                                                                BorderLocation="Bottom"
+                                                                BorderWidth="1" />
+                                </telerikDataControls:RadListView.SelectedItemStyle>
+                                <telerikDataControls:RadListView.LayoutDefinition>
+                                    <listView:ListViewLinearLayout HorizontalItemSpacing="0" ItemLength="48" />
+                                </telerikDataControls:RadListView.LayoutDefinition>
+                                <telerikDataControls:RadListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <listView:ListViewTemplateCell>
+                                            <listView:ListViewTemplateCell.View>
+                                                <Grid Padding="12,0,0,0"
+                                                      BackgroundColor="Transparent"
+                                                      Grid.ColumnSpacing="0"
+                                                      Grid.RowSpacing="0">
+                                                    <Label FontSize="16"
+                                                           Text="{Binding Name}"
+                                                           TextColor="#1E323F"
+                                                           VerticalOptions="Center" />
+                                                </Grid>
+                                            </listView:ListViewTemplateCell.View>
+                                        </listView:ListViewTemplateCell>
+                                    </DataTemplate>
+                                </telerikDataControls:RadListView.ItemTemplate>
+                            </telerikDataControls:RadListView>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </telerikPrimitives:RadSideDrawer.MainContent>
+            <telerikPrimitives:RadSideDrawer.DrawerContent>
+                <Grid Padding="0,8,0,8"
+                      BackgroundColor="#1E323F"
+                      Grid.ColumnSpacing="0"
+                      Grid.RowSpacing="0">
+                    <telerikDataControls:RadListView ItemTapped="LinkTapped" ItemsSource="{Binding InformationMenuList}">
+                        <telerikDataControls:RadListView.ItemStyle>
+                            <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+                        </telerikDataControls:RadListView.ItemStyle>
+                        <telerikDataControls:RadListView.PressedItemStyle>
+                            <listView:ListViewItemStyle BackgroundColor="#465763" BorderWidth="0" />
+                        </telerikDataControls:RadListView.PressedItemStyle>
+                        <telerikDataControls:RadListView.SelectedItemStyle>
+                            <listView:ListViewItemStyle BackgroundColor="#465763" BorderWidth="0" />
+                        </telerikDataControls:RadListView.SelectedItemStyle>
+                        <telerikDataControls:RadListView.LayoutDefinition>
+                            <listView:ListViewLinearLayout ItemLength="48" />
+                        </telerikDataControls:RadListView.LayoutDefinition>
+                        <telerikDataControls:RadListView.ItemTemplate>
+                            <DataTemplate>
+                                <listView:ListViewTemplateCell>
+                                    <listView:ListViewTemplateCell.View>
+                                        <Grid Padding="12,0,0,0"
+                                              Grid.ColumnSpacing="0"
+                                              Grid.RowSpacing="0">
+                                            <Label FontSize="16"
+                                                   Text="{Binding}"
+                                                   TextColor="#E1E2E3"
+                                                   VerticalOptions="Center" />
+                                        </Grid>
+                                    </listView:ListViewTemplateCell.View>
+                                </listView:ListViewTemplateCell>
+                            </DataTemplate>
+                        </telerikDataControls:RadListView.ItemTemplate>
+                    </telerikDataControls:RadListView>
+                </Grid>
+            </telerikPrimitives:RadSideDrawer.DrawerContent>
+        </telerikPrimitives:RadSideDrawer>
+        <Grid BackgroundColor="#14222C"
+              HeightRequest="24"
+              HorizontalOptions="Fill"
+              Opacity="0.5"
+              VerticalOptions="End" />
+        <Grid x:Name="drawerOpenerHost"
+              Padding="0,0,12,0"
+              BackgroundColor="Transparent"
+              HeightRequest="24"
+              HorizontalOptions="End"
+              VerticalOptions="End"
+              WidthRequest="48">
+            <Image HorizontalOptions="End"
+                   Source="Assets\ic_menu.png"
+                   VerticalOptions="Center" />
+        </Grid>
+    </Grid>
+</ContentPage>

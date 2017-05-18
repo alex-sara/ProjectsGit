@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:examples="clr-namespace:Examples;assembly=Examples"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:local="clr-namespace:Examples.AutoComplete.Tokens"
+             x:Class="Examples.AutoComplete.Tokens.Example">
+
+  <VisualElement.Resources>
+    <ResourceDictionary>
+      <examples:UwpImageSourceConverter x:Key="UwpImageSourceConverter" />
+    </ResourceDictionary>
+  </VisualElement.Resources>
+  
+  <ContentPage.BindingContext>
+    <local:TokensViewModel />
+  </ContentPage.BindingContext>
+
+  <Grid BackgroundColor="White">
+    <Grid.Behaviors>
+      <examples:CustomBehavior />
+    </Grid.Behaviors>
+    <Grid Margin="16, 0, 16, 0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="25" />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image Source="autocomplete_tokens_search.png" 
+               WidthRequest="20"
+               HorizontalOptions="Center" />
+        <StackLayout Grid.Column="1">
+          <telerikInput:RadAutoComplete x:Name="autoComplete"
+                                        ItemsSource="{Binding Tags}"
+                                        CompletionMode="Contains"
+                                        DisplayMode="Tokens"
+                                        Watermark="Search for images" />
+        </StackLayout>
+      </Grid>
+      <telerikDataControls:RadListView x:Name="listViewImages" 
+                                       Grid.Row="1" 
+                                       ItemsSource="{Binding ImageInfos}"
+                                       SizeChanged="ListViewImages_SizeChanged">
+        <telerikDataControls:RadListView.LayoutDefinition>
+          <telerikListView:ListViewGridLayout Orientation="Vertical"
+                                              SpanCount="3">
+            <telerikListView:ListViewGridLayout.HorizontalItemSpacing>
+                    <OnPlatform x:TypeArguments="x:Double"
+                                iOS="1"
+                                Android="0" />
+            </telerikListView:ListViewGridLayout.HorizontalItemSpacing>
+            <telerikListView:ListViewGridLayout.VerticalItemSpacing>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="1" />
+            </telerikListView:ListViewGridLayout.VerticalItemSpacing>
+        </telerikListView:ListViewGridLayout>
+        </telerikDataControls:RadListView.LayoutDefinition>
+        <telerikDataControls:RadListView.ItemTemplate>
+          <DataTemplate>
+            <telerikListView:ListViewTemplateCell>
+              <telerikListView:ListViewTemplateCell.View>
+                <Image Source="{Binding ImageFileName, Converter={StaticResource UwpImageSourceConverter}}" />
+              </telerikListView:ListViewTemplateCell.View>
+            </telerikListView:ListViewTemplateCell>
+          </DataTemplate>
+        </telerikDataControls:RadListView.ItemTemplate>
+      </telerikDataControls:RadListView>
+    </Grid>
+  </Grid>
+</ContentPage>

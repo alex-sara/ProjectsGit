@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White"
+             x:Class="Examples.Pages.ControlInfoPageUWP">
+  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="28"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!--Navugation Bar-->
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="28"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid x:Name="backButton"
+            BackgroundColor="Transparent"
+            Grid.ColumnSpacing="0"
+            Grid.RowSpacing="0"
+            Padding="12, 0, 0, 0"
+            HeightRequest="28"
+            WidthRequest="28">
+        <Image HorizontalOptions="Start"
+               VerticalOptions="Center"
+               Source="Assets\ic_arrow_back.png"/>
+      </Grid>
+      <Grid x:Name="backLableHolder" Grid.Column="1" Padding="12, 0, 0, 0">
+        <Label x:Name="backLabel" TextColor="#014F80" VerticalOptions="Center" FontSize="20" />
+      </Grid>
+    </Grid>
+
+    <!--Background gradient image-->
+    <Image Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Source="Assets\background_normal.png"/>
+
+    <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0" x:Name="rootGrid" Padding="12">
+      <Label x:Name="contentLabel" LineBreakMode="WordWrap" TextColor="#1E323F" FontSize="17" />
+    </Grid>
+  </Grid>
+</ContentPage>

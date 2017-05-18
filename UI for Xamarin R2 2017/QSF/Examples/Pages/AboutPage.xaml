@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.Pages.AboutPage"
+             BackgroundColor="White">
+  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+    <Grid.RowDefinitions>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                      iOS="44"
+                      Android="56" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!--Navigation Bar-->
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition>
+          <ColumnDefinition.Width>
+            <OnPlatform x:TypeArguments="GridLength"
+                        iOS="38"
+                        Android="56"
+                        WinPhone="56"/>
+          </ColumnDefinition.Width>
+        </ColumnDefinition>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      
+      <Grid x:Name="backLableHolder" Grid.Column="1">
+        <Label x:Name="backLabel" HorizontalOptions="Start" Text="About" TextColor="#014F80" VerticalOptions="Center">
+          <Label.FontSize>
+            <OnPlatform x:TypeArguments="x:Double"
+                        Android="20"
+                        iOS="17"
+                        WinPhone="20"/>
+          </Label.FontSize>
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS>Helvetica-medium</OnPlatform.iOS>
+              <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+      </Grid>
+
+      <Grid  Padding="16, 0, 0, 0">
+        <Grid.WidthRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+                      iOS="44"
+                      Android="54"
+                      WinPhone="54" />
+        </Grid.WidthRequest>
+        <Button Clicked="backButtonClicked" BorderRadius="0" BackgroundColor="Transparent"/>
+        <Image HorizontalOptions="Start" VerticalOptions="Center" InputTransparent="True">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        iOS="ic_arrow_back"
+                        Android="ic_arrow_back"
+                        WinPhone="Assets\ic_arrow_back.png"/>
+          </Image.Source>
+        </Image>
+      </Grid>
+    </Grid>
+
+    <!--Background gradient image-->
+    <Image Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill">
+      <Image.Source>
+        <OnPlatform x:TypeArguments="ImageSource"
+                    iOS="background_normal"
+                    Android="background_normal"
+                    WinPhone="Assets\background_normal.png"/>
+      </Image.Source>
+    </Image>
+
+    <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0" x:Name="rootGrid" Padding="16">
+      <Label x:Name="contentLabel" LineBreakMode="WordWrap" TextColor="#1E323F">
+        <Label.FontSize>
+          <OnPlatform x:TypeArguments="x:Double"
+                      iOS="15"
+                      Android="17" />
+        </Label.FontSize>
+      </Label>
+    </Grid>
+  </Grid>
+</ContentPage>

@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA006612-B229-48F8-9DF9-599B501EFEF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Examples</RootNamespace>
+    <AssemblyName>Examples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BusyIndicator\CustomIndicator\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BusyIndicator\Gallery\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BusyIndicator\Gallery\ImageConverter.cs" />
+    <Compile Include="BusyIndicator\Gallery\ViewModel.cs" />
+    <Compile Include="Common\App.cs" />
+    <Compile Include="Common\CodeViewer.cs" />
+    <Compile Include="Common\CustomBehavior.cs" />
+    <Compile Include="Common\CustomLabel.cs" />
+    <Compile Include="DataForm\Reservations\OrderOrigin.cs" />
+    <Compile Include="DataForm\Reservations\Section.cs" />
+    <Compile Include="DataForm\Reservations\SectionToStringConverter.cs" />
+    <Compile Include="DataForm\Reservations\UserPropertyDataSourceProvider.cs" />
+    <Compile Include="AutoComplete\Tokens\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoComplete\Tokens\StringArrayToStringConverter.cs" />
+    <Compile Include="AutoComplete\Tokens\TokensViewModel.cs" />
+    <Compile Include="AutoComplete\Tokens\ImageInfo.cs" />
+    <Compile Include="Effects\EntryEffect.cs" />
+    <Compile Include="Gauge\ActivityDashboard\ActivityDataItem.cs" />
+    <Compile Include="Gauge\ActivityDashboard\ActivityViewModel.cs" />
+    <Compile Include="Gauge\ActivityDashboard\ChartsTabView.xaml.cs">
+      <DependentUpon>ChartsTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\ActivityDashboard\Resources.xaml.cs">
+      <DependentUpon>Resources.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Gauge\ActivityDashboard\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="Gauge\ActivityDashboard\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\HorizontalGaugeGallery\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\HorizontalGaugeGallery\HorizontalGaugeGalleryItem2.xaml.cs">
+      <DependentUpon>HorizontalGaugeGalleryItem2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\HorizontalGaugeGallery\HorizontalGaugeGalleryItem1.xaml.cs">
+      <DependentUpon>HorizontalGaugeGalleryItem1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\VerticalGaugeGallery\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\VerticalGaugeGallery\VerticalGaugeGalleryItem2.xaml.cs">
+      <DependentUpon>VerticalGaugeGalleryItem2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\VerticalGaugeGallery\VerticalGaugeGalleryItem1.xaml.cs">
+      <DependentUpon>VerticalGaugeGalleryItem1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gauge\RadialGaugeGallery\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Miscellaneous\GalleryItem.cs" />
+    <Compile Include="Miscellaneous\GalleryResources.xaml.cs">
+      <DependentUpon>GalleryResources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ResourceHelper.cs" />
+    <Compile Include="IFileViewer.cs" />
+    <Compile Include="Pages\UWP\BlankPage.xaml.cs">
+      <DependentUpon>BlankPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UWP\AboutPageUWP.xaml.cs">
+      <DependentUpon>AboutPageUWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UWP\ControlInfoPageUWP.xaml.cs">
+      <DependentUpon>ControlInfoPageUWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UWP\ExampleDetailsPageUWP.xaml.cs">
+      <DependentUpon>ExampleDetailsPageUWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UWP\AvailableExamplesPageUWP.xaml.cs">
+      <DependentUpon>AvailableExamplesPageUWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\Appointments\EventData.cs" />
+    <Compile Include="Calendar\Appointments\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\Appointments\InvertedBooleanConverter.cs" />
+    <Compile Include="Calendar\Appointments\MainViewModel.cs" />
+    <Compile Include="Chart\AreaSeries\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\AreaSeries\MainViewModel.cs" />
+    <Compile Include="Chart\BarSeries\DataItem.cs" />
+    <Compile Include="Chart\BarSeries\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\BarSeries\MainViewModel.cs" />
+    <Compile Include="Chart\LineSeries\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\LineSeries\MainViewModel.cs" />
+    <Compile Include="Chart\PieSeries\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\PieSeries\MainViewModel.cs" />
+    <Compile Include="Chart\ScatterSeries\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\ScatterSeries\MainViewModel.cs" />
+    <Compile Include="ContentPresenter.cs" />
+    <Compile Include="DataForm\Reservations\DataFormPage.xaml.cs">
+      <DependentUpon>DataFormPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\Reservations\DataFormViewModel.cs" />
+    <Compile Include="DataForm\Reservations\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\Reservations\MainViewModel.cs" />
+    <Compile Include="DataForm\Reservations\OrderOriginToStringConverter.cs" />
+    <Compile Include="DataForm\Reservations\Reservation.cs" />
+    <Compile Include="Example.cs" />
+    <Compile Include="ExamplesLoader.cs" />
+    <Compile Include="Helpers\AnimationHelper.cs" />
+    <Compile Include="Helpers\ExampleHelper.cs" />
+    <Compile Include="IDevModeService.cs" />
+    <Compile Include="ListView\Layouts\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListView\Layouts\MainViewModel.cs" />
+    <Compile Include="ListView\Reorder\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListView\Reorder\Item.cs" />
+    <Compile Include="ListView\Reorder\MainViewModel.cs" />
+    <Compile Include="ListView\Selection\BusinessItem.cs" />
+    <Compile Include="ListView\Selection\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListView\Selection\ItemDetailsPage.xaml.cs">
+      <DependentUpon>ItemDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListView\Selection\MainViewModel.cs" />
+    <Compile Include="PageFactory.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AvailableExamplesPage.xaml.cs">
+      <DependentUpon>AvailableExamplesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DeviceHelper.cs" />
+    <Compile Include="Pages\ControlInfoPage.xaml.cs">
+      <DependentUpon>ControlInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExampleCodePage.xaml.cs">
+      <DependentUpon>ExampleCodePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExampleDetailsPage.xaml.cs">
+      <DependentUpon>ExampleDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StartPageViewModel.cs" />
+    <Compile Include="Pages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QSFControl.cs" />
+    <Compile Include="Rating\RestaurantReview\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rating\RestaurantReview\NewReview.xaml.cs">
+      <DependentUpon>NewReview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentedControl\FirstLook\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentedControl\FirstLook\MenuItem.cs" />
+    <Compile Include="SegmentedControl\FirstLook\MenuItemConverter.cs" />
+    <Compile Include="SideDrawer\Recipes\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SideDrawer\Recipes\MainViewModel.cs" />
+    <Compile Include="SideDrawer\Recipes\Recipe.cs" />
+    <Compile Include="SideDrawer\Settings\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SideDrawer\Settings\MainViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pages\UWP\StartPageWUP.xaml.cs">
+      <DependentUpon>StartPageWUP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpreadStreamProcessing\GenerateSpreadsheet\CourseViewModel.cs" />
+    <Compile Include="SpreadStreamProcessing\GenerateSpreadsheet\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpreadStreamProcessing\GenerateSpreadsheet\MainViewModel.cs" />
+    <Compile Include="TabView\RestaurantMenu\ExploreItemsView.xaml.cs">
+      <DependentUpon>ExploreItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabView\RestaurantMenu\ViewModels\RestaurantFlatSectionViewModel.cs" />
+    <Compile Include="TabView\RestaurantMenu\ViewModels\RestaurantExploreSectionViewModel.cs" />
+    <Compile Include="TabView\RestaurantMenu\ViewModels\RestaurantSectionViewModel.cs" />
+    <Compile Include="TabView\RestaurantMenu\ViewModels\RestaurantMenuItem.cs" />
+    <Compile Include="TabView\RestaurantMenu\ViewModels\RestaurantViewModel.cs" />
+    <Compile Include="TabView\RestaurantMenu\BooleanValueConverter.cs" />
+    <Compile Include="TabView\RestaurantMenu\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabView\RestaurantMenu\ExploreTab.xaml.cs">
+      <DependentUpon>ExploreTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabView\RestaurantMenu\Resources.xaml.cs">
+      <DependentUpon>Resources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UwpImageSourceConverter.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="ZipLibrary\CreateArchive\Converters\FileExtensionToIconConverter.cs" />
+    <Compile Include="ZipLibrary\CreateArchive\Converters\FileSizeConverter.cs" />
+    <Compile Include="ZipLibrary\CreateArchive\Converters\SelectionToBackgroundColorConverter.cs" />
+    <Compile Include="ZipLibrary\CreateArchive\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZipLibrary\CreateArchive\FileViewModel.cs" />
+    <Compile Include="ZipLibrary\CreateArchive\MainViewModel.cs" />
+    <Compile Include="ZipLibrary\CreateArchive\ListViewItemTappedBehavior.cs" />
+    <Compile Include="Helpers\NavigationHelper.cs" />
+    <EmbeddedResource Include="Calendar\DayView\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Calendar\DayView\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\DayView\ExampleViewModel.cs" />
+    <Compile Include="Calendar\DayView\Appointment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="config.xml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SkiaSharp, Version=1.55.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.1.55.1\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms, Version=1.55.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.Views.Forms.1.55.1\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.Views.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>..\..\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\Binaries\Portable\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\Binaries\Portable\Telerik.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Calendar\Appointments\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListView\Layouts\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideDrawer\Recipes\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SideDrawer\Settings\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListView\Reorder\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListView\Selection\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\BarSeries\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\LineSeries\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\AreaSeries\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\ScatterSeries\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\AvailableExamplesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ExampleCodePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ExampleDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\StartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListView\Selection\ItemDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ControlInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\PieSeries\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataForm\Reservations\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataForm\Reservations\DataFormPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Balance Sheet.xlsx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Book.pdf" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Food Order.xlsx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Freeze Panes.xlsx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Monthly Report.xlsx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Multipage Document.pdf" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Orders Log.xlsx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Printing.xlsx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\Sample.pdf" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\RadRichTextBox.docx" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\RepeatHeaderRows.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UWP\StartPageWUP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UWP\AvailableExamplesPageUWP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UWP\ExampleDetailsPageUWP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UWP\ControlInfoPageUWP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UWP\AboutPageUWP.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UWP\BlankPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\ActivityDashboard\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZipLibrary\CreateArchive\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoComplete\Tokens\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\ActivityDashboard\ChartsTabView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Miscellaneous\GalleryResources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\photo1.png" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\photo2.png" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\photo3.png" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\RadImageEditor.png" />
+    <EmbeddedResource Include="Resources\ZipSampleDocuments\thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\RadialGaugeGallery\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpreadStreamProcessing\GenerateSpreadsheet\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\HorizontalGaugeGallery\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\HorizontalGaugeGallery\HorizontalGaugeGalleryItem1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\VerticalGaugeGallery\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\VerticalGaugeGallery\VerticalGaugeGalleryItem1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Rating\RestaurantReview\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Rating\RestaurantReview\NewReview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BusyIndicator\Gallery\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\HorizontalGaugeGallery\HorizontalGaugeGalleryItem2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BusyIndicator\CustomIndicator\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gauge\VerticalGaugeGallery\VerticalGaugeGalleryItem2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabView\RestaurantMenu\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabView\RestaurantMenu\ExploreTab.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabView\RestaurantMenu\Resources.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabView\RestaurantMenu\ExploreItemsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SegmentedControl\FirstLook\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.TabView.RestaurantMenu.ExploreTab"
+             xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:local="clr-namespace:Examples.TabView.RestaurantMenu">
+
+  <VisualElement.Resources>
+    <ResourceDictionary MergedWith="local:Resources" />
+  </VisualElement.Resources>
+
+  <telerikPrimitives:RadTabView Margin="10, 10, 10, 10">
+    <telerikPrimitives:RadTabView.Items>
+      <telerikPrimitives:TabViewItem>
+        <telerikPrimitives:TabViewItem.Header>
+          <telerikPrimitives:TabViewHeaderItem Text="BREAKFAST" 
+                                               ControlTemplate="{StaticResource orangeControlTemplate}" />
+        </telerikPrimitives:TabViewItem.Header>
+        <telerikPrimitives:TabViewItem.Content>
+          <local:ExploreItemsView BindingContext="{Binding BreakfastItems}"
+                                  IsSelectable="True" />
+        </telerikPrimitives:TabViewItem.Content>
+      </telerikPrimitives:TabViewItem>
+      <telerikPrimitives:TabViewItem>
+        <telerikPrimitives:TabViewItem.Header>
+          <telerikPrimitives:TabViewHeaderItem Text="MAIN" 
+                                               ControlTemplate="{StaticResource orangeControlTemplate}" />
+        </telerikPrimitives:TabViewItem.Header>
+        <telerikPrimitives:TabViewItem.Content>
+          <local:ExploreItemsView BindingContext="{Binding MainItems}"
+                                  IsSelectable="True" />
+        </telerikPrimitives:TabViewItem.Content>
+      </telerikPrimitives:TabViewItem>
+      <telerikPrimitives:TabViewItem>
+        <telerikPrimitives:TabViewItem.Header>
+          <telerikPrimitives:TabViewHeaderItem Text="DESSERT"
+                                               ControlTemplate="{StaticResource orangeControlTemplate}" />
+        </telerikPrimitives:TabViewItem.Header>
+        <telerikPrimitives:TabViewItem.Content>
+          <local:ExploreItemsView BindingContext="{Binding DessertItems}"
+                                  IsSelectable="True" />
+        </telerikPrimitives:TabViewItem.Content>
+      </telerikPrimitives:TabViewItem>
+      <telerikPrimitives:TabViewItem>
+        <telerikPrimitives:TabViewItem.Header>
+          <telerikPrimitives:TabViewHeaderItem Text="DRINKS"
+                                               ControlTemplate="{StaticResource orangeControlTemplate}" />
+        </telerikPrimitives:TabViewItem.Header>
+        <telerikPrimitives:TabViewItem.Content>
+          <local:ExploreItemsView BindingContext="{Binding DrinksItems}"
+                                  IsSelectable="True" />
+        </telerikPrimitives:TabViewItem.Content>
+      </telerikPrimitives:TabViewItem>
+    </telerikPrimitives:RadTabView.Items>
+  </telerikPrimitives:RadTabView>
+</ContentView>

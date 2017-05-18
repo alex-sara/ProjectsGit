@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Examples.BusyIndicator.Gallery.Example"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+             xmlns:controls="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:examples="clr-namespace:Examples;assembly=Examples"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:local="clr-namespace:Examples.BusyIndicator.Gallery"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls">
+    <ContentPage.Resources>
+        <ResourceDictionary MergedWith="examples:GalleryResources">
+            <local:ImageConverter x:Key="imageConverter" />
+
+            <DataTemplate x:Key="galleryItemsList_ImageItemTemplate">
+                <listView:ListViewTemplateCell>
+                    <listView:ListViewTemplateCell.View>
+                        <Image Source="{Binding Converter={StaticResource Key=imageConverter}, ConverterParameter='busy_indicator_gallery_{0}.png'}" />
+                    </listView:ListViewTemplateCell.View>
+                </listView:ListViewTemplateCell>
+            </DataTemplate>
+
+            <Style x:Key="busyIndicatorGalleryItemsListStyle"
+                   BasedOn="{StaticResource galleryItemsListStyle}"
+                   TargetType="telerikDataControls:RadListView">
+                <Setter Property="ItemTemplate" Value="{StaticResource galleryItemsList_ImageItemTemplate}" />
+            </Style>
+
+            <OnPlatform x:Key="infoButtonHorizontalOptions"
+                        x:TypeArguments="LayoutOptions"
+                        Android="End"
+                        iOS="End"
+                        WinPhone="End"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid examples:CustomBehavior.InfoButtonHorizontalOptions="{StaticResource infoButtonHorizontalOptions}"
+          examples:CustomBehavior.IsBackButtonVisible="False"
+          BackgroundColor="White"
+          Grid.ColumnSpacing="0"
+          Grid.RowSpacing="0">
+        <Grid.Behaviors>
+            <examples:CustomBehavior />
+        </Grid.Behaviors>
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength"
+                                Android="56"
+                                WinPhone="56"
+                                iOS="40" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="*" />
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength"
+                                Android="56"
+                                WinPhone="56"
+                                iOS="40" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid BackgroundColor="#0A90D0"
+              Grid.ColumnSpacing="0"
+              Grid.RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Margin="16,0"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+                                Android="up_caret_white.png"
+                                WinPhone="Assets\up_caret_white.png"
+                                iOS="up_caret_white.png" />
+                    </Image.Source>
+                </Image>
+
+                <Button BackgroundColor="Transparent" Clicked="Button_Clicked">
+                    <Button.Opacity>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                Android="0"
+                                WinPhone="0"
+                                iOS="1" />
+                    </Button.Opacity>
+                </Button>
+
+                <Label Grid.ColumnSpan="2"
+                   FontSize="13"
+                   HorizontalOptions="Center"
+                   Text="Gallery"
+                   TextColor="White"
+                   VerticalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <telerikDataControls:RadListView ItemsSource="{Binding Path=AnimationTypes}"
+                                             SelectedItems="{Binding Path=SelectedItems}"
+                                             Style="{StaticResource busyIndicatorGalleryItemsListStyle}" />
+
+                <controls:RadBusyIndicator x:Name="indicator"
+                                       Grid.Row="1"
+                                       AnimationContentHeightRequest="200"
+                                       AnimationContentWidthRequest="200"
+                                       AnimationType="{Binding Path=SelectedAnimationType}"
+                                       InputTransparent="True"
+                                       IsBusy="True" />
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,1739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{093ED2D0-900D-4384-BA27-496A278BA603}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Examples</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>ExamplesDemo</AssemblyName>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchProfiling>false</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\..\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AppleStockPrices.json" />
+    <BundleResource Include="Resources\ListViewSampleData.json" />
+    <BundleResource Include="Resources\PhotosWithNames.json" />
+    <BundleResource Include="Resources\ListItems.json" />
+    <BundleResource Include="Resources\electricity.json" />
+    <BundleResource Include="Resources\countries.json" />
+    <BundleResource Include="Resources\namesPhotos.json" />
+    <BundleResource Include="Resources\user.json" />
+    <BundleResource Include="examples.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="Examples\Calendar\CalendarWithEvents.cs" />
+    <Compile Include="Examples\Calendar\CalendarTransitionEffects.cs" />
+    <Compile Include="Examples\Calendar\CalendarSelection.cs" />
+    <Compile Include="Examples\Calendar\iOS7StyleCalendar.cs" />
+    <Compile Include="Examples\Calendar\CalendarViewModes.cs" />
+    <Compile Include="Examples\Calendar\CalendarCustomization.cs" />
+    <Compile Include="Examples\Calendar\CustomCell.cs" />
+    <Compile Include="Examples\Calendar\CalendarEventKitDataBinding.cs" />
+    <Compile Include="Examples\Calendar\LocalizedCalendar.cs" />
+    <Compile Include="Examples\Feedback\FeedbackExampleController.cs" />
+    <Compile Include="Examples\Feedback\FeedbackExampleController.designer.cs">
+      <DependentUpon>FeedbackExampleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStarted.cs" />
+    <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitions.cs" />
+    <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositions.cs" />
+    <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContent.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransition.cs" />
+    <Compile Include="Examples\DataSource\DataSourceGettingStarted.cs" />
+    <Compile Include="Examples\DataSource\DataSourceDescriptorsAPI.cs" />
+    <Compile Include="Examples\DataSource\DataSourceUIBindings.cs" />
+    <Compile Include="Examples\DataSource\DataSourceWithWebService.cs" />
+    <Compile Include="Examples\DataSource\DSItem.cs" />
+    <Compile Include="Examples\DataSource\DSCollectionViewCell.cs" />
+    <Compile Include="Examples\SideDrawer\SideDrawerHeader.cs" />
+    <Compile Include="Examples\ListView\ListViewSelection.cs" />
+    <Compile Include="Examples\ListView\ListViewAnimations.cs" />
+    <Compile Include="Examples\ListView\ListViewLoadOnDemand.cs" />
+    <Compile Include="Examples\ListView\ListViewPullToRefresh.cs" />
+    <Compile Include="Examples\ListView\ListViewReorder.cs" />
+    <Compile Include="Examples\ListView\ListViewSwipe.cs" />
+    <Compile Include="Examples\ListView\ListViewGroups.cs" />
+    <Compile Include="Examples\ListView\ListViewGettingStarted.cs" />
+    <Compile Include="Examples\ListView\CustomCells\ImageWithTextListViewCell.cs" />
+    <Compile Include="Examples\ListView\ListViewLayout.cs" />
+    <Compile Include="Examples\ListView\CustomCells\SimpleListViewCell.cs" />
+    <Compile Include="Examples\ListView\LoremIpsumGenerator.cs" />
+    <Compile Include="Examples\ListView\CustomCells\CustomCardListViewCell.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\MyTransition.cs" />
+    <Compile Include="Examples\ListView\CustomCells\CustomListCell.cs" />
+    <Compile Include="Examples\ListView\CustomCells\AnimationListCell.cs" />
+    <Compile Include="Examples\Alert\AlertGettingStarted.cs" />
+    <Compile Include="Examples\Alert\AlertAnimations.cs" />
+    <Compile Include="Examples\Alert\AlertNotifications.cs" />
+    <Compile Include="Examples\Alert\AlertCustomView.cs" />
+    <Compile Include="Examples\Alert\AlertSettings.cs" />
+    <Compile Include="Examples\Alert\Classes\AlertCustomContentView.cs" />
+    <Compile Include="Examples\Alert\Classes\Settings.cs" />
+    <Compile Include="Examples\Alert\Classes\UIButton_Circle.cs" />
+    <Compile Include="Examples\DataForm\DataFormGettingStarted.cs" />
+    <Compile Include="Examples\DataForm\DataFormReadOnly.cs" />
+    <Compile Include="Examples\DataForm\DataFormCustomization.cs" />
+    <Compile Include="Examples\DataForm\DataFormValidation.cs" />
+    <Compile Include="Examples\DataForm\Classes\PersonalInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\CallEditor.cs" />
+    <Compile Include="Examples\DataForm\Classes\CardInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\RegistrationInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\ReservationForm.cs" />
+    <Compile Include="Examples\DataForm\Classes\EmployeeInfo.cs" />
+    <Compile Include="Examples\Gauges\GaugeCustomization.cs" />
+    <Compile Include="Examples\Gauges\GaugeInteraction.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteGettingStarted.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteTokens.cs" />
+    <Compile Include="Examples\AutoComplete\PersonListViewCell.cs" />
+    <Compile Include="Examples\DataForm\DataFormCollapsibleGroups.cs" />
+    <Compile Include="Examples\SideDrawer\MultipleSideDrawers\MultipleSideDrawers.cs" />
+    <Compile Include="Examples\DataForm\DataFormJSONSupport.cs" />
+    <Compile Include="Examples\ListView\CustomCells\ListViewVariableSizeCell.cs" />
+    <Compile Include="Examples\ListView\ListViewUpdate.cs" />
+    <Compile Include="Examples\ListView\ListViewPerformance.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Examples\Alert\AlertCustomize.cs" />
+    <Compile Include="Examples\Calendar\CalendarInlineEvents.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteCustomization.cs" />
+    <Compile Include="Examples\DataForm\DataFormLabelAlignment.cs" />
+    <Compile Include="Examples\Gauges\GaugeGettingStarted.cs" />
+    <Compile Include="Examples\Gauges\GaugeAnimations.cs" />
+    <Compile Include="Examples\Gauges\GaugeScales.cs" />
+    <Compile Include="Examples\Gauges\GaugeRanges.cs" />
+    <Compile Include="Examples\ListView\ListViewVariableHeight.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteLoadData.cs" />
+    <Compile Include="XamarinExampleViewController.cs" />
+    <Compile Include="Examples\ListView\DataSourceItem.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\ColumnAndBarChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\LineAreaSpline.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\ScatterChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\BubbleChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\PieDonut.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\FinancialChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\StockDataPoint.cs" />
+    <Compile Include="Examples\Chart\StackedCharts\StackedColumnChart.cs" />
+    <Compile Include="Examples\Chart\StackedCharts\StackedAreaChart.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\NumericAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\CategoricalAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\DateTimeAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\MultipleAxes.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\NegativeValues.cs" />
+    <Compile Include="Examples\Chart\Annotations\BandAndLineAnnotations.cs" />
+    <Compile Include="Examples\Chart\Annotations\BalloonAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\LayerAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\ViewAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\CrossLineAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\Trackball.cs" />
+    <Compile Include="Examples\Chart\Annotations\CustomAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\MyAnnotation.cs" />
+    <Compile Include="Examples\Chart\Animations\DefaultAnimation.cs" />
+    <Compile Include="Examples\Chart\Animations\CustomAnimationAreaChart.cs" />
+    <Compile Include="Examples\Chart\Animations\CustomAnimationLineChart.cs" />
+    <Compile Include="Examples\Chart\Animations\CustomAnimationPieChart.cs" />
+    <Compile Include="Examples\Chart\Animations\UIKitDynamicsAnimation.cs" />
+    <Compile Include="Examples\Chart\Binding\BindWithDelegate.cs" />
+    <Compile Include="Examples\Chart\Binding\BindWithCustomObject.cs" />
+    <Compile Include="Examples\Chart\Binding\BindWithDataPoint.cs" />
+    <Compile Include="Examples\Chart\PointLabels\PointLabels.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomPointLabel\CustomPointLabels.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomPointLabel\MyPointLabel.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\SelectedPointLabel.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\MyPointLabelRender.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\CustomPointLabelRender.cs" />
+    <Compile Include="Examples\Chart\LiveData.cs" />
+    <Compile Include="Examples\Chart\PanZoom.cs" />
+    <Compile Include="Examples\Chart\Customize.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\LogarithmicAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\DateTimeCategoryAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\CustomAxis.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\GapsLineSplineAreaChart.cs" />
+    <Compile Include="Examples\Chart\Annotations\PieChartAnnotations.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\IndicatorsChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\RangeBarColumnChart.cs" />
+    <Compile Include="Examples\DataForm\Documentation Snippets\DataFormDocsGroupLayouts.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsGridCustomization.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsLegend.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsPopulatingWithData.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsSelection.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsStructure.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsCustomDrawing.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsBarSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsCandleStick.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsIndicators.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsLineSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsOhlc.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsPie.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsRangeColumn.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsScatter.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewDocsGroups.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewDocsGroupsDelegate.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewDocsSetupDataSource.cs" />
+    <Compile Include="Examples\SideDrawer\Documentation Snippets\SideDrawerDocsSetup.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsAuth.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsDictionary.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsQueries.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsUIBinding.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewBasicSetup.cs" />
+    <Compile Include="Examples\AutoComplete\Documentation Snippets\AutoCompleteBasicSetup.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsSplineSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsSplineAreaSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsAreaSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsDonut.cs" />
+    <Compile Include="Examples\Calendar\DocumentationSnippets\CalendarDocsSimpleCustomization.cs" />
+    <Compile Include="Examples\Calendar\DocumentationSnippets\CalendarDocsWithSimpleEvent.cs" />
+    <Compile Include="Examples\Calendar\DocumentationSnippets\DocsCustomCell.cs" />
+    <Compile Include="Examples\Calendar\CalendarDayViewCustomization.cs" />
+    <Compile Include="Examples\Calendar\CalendarDayViewStyling.cs" />
+    <Compile Include="Examples\Calendar\CalendarDayViewViewControllerBase.cs" />
+    <Compile Include="Examples\Calendar\CalendarDayViewGettingStarted.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Examples\" />
+    <Folder Include="Examples\Calendar\" />
+    <Folder Include="Examples\Feedback\" />
+    <Folder Include="Examples\SideDrawer\" />
+    <Folder Include="Examples\SideDrawer\GettingStartedExample\" />
+    <Folder Include="Examples\SideDrawer\TransitionsExample\" />
+    <Folder Include="Examples\SideDrawer\PositionsExample\" />
+    <Folder Include="Examples\SideDrawer\CustomContentExample\" />
+    <Folder Include="Examples\SideDrawer\CustomTransitionExample\" />
+    <Folder Include="Examples\DataSource\" />
+    <Folder Include="Examples\ListView\" />
+    <Folder Include="Examples\ListView\CustomCells\" />
+    <Folder Include="Examples\Alert\" />
+    <Folder Include="Examples\Alert\Classes\" />
+    <Folder Include="Examples\DataForm\" />
+    <Folder Include="Examples\DataForm\Classes\" />
+    <Folder Include="Examples\Gauges\" />
+    <Folder Include="Examples\AutoComplete\" />
+    <Folder Include="Examples\SideDrawer\MultipleSideDrawers\" />
+    <Folder Include="Examples\Chart\" />
+    <Folder Include="Examples\Chart\Annotations\" />
+    <Folder Include="Examples\Chart\Binding\" />
+    <Folder Include="Examples\Chart\ChartTypes\" />
+    <Folder Include="Examples\Chart\AxisTypes\" />
+    <Folder Include="Examples\Chart\StackedCharts\" />
+    <Folder Include="Examples\Chart\Animations\" />
+    <Folder Include="Examples\Chart\PointLabels\" />
+    <Folder Include="Examples\Chart\PointLabels\CustomPointLabel\" />
+    <Folder Include="Examples\Chart\PointLabels\CustomLabelRender\" />
+    <Folder Include="Examples\DataForm\Documentation Snippets\" />
+    <Folder Include="Examples\Chart\Documentation Snippets\" />
+    <Folder Include="Examples\ListView\Documentation Snippets\" />
+    <Folder Include="Examples\SideDrawer\Documentation Snippets\" />
+    <Folder Include="Examples\DataSource\Documentation Snippets\" />
+    <Folder Include="Examples\AutoComplete\Documentation Snippets\" />
+    <Folder Include="Examples\Calendar\DocumentationSnippets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="LaunchScreen.xib" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Images.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\albania-flag.imageset\AL-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\albania-flag.imageset\AL.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\albania-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\andorra-flag.imageset\AN-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\andorra-flag.imageset\AN.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\andorra-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\australia-flag.imageset\AU-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\australia-flag.imageset\AU.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\australia-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\belgium-flag.imageset\BE-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\belgium-flag.imageset\BE.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\belgium-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\bulgaria-flag.imageset\BG-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\bulgaria-flag.imageset\BG.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\bulgaria-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\cyprus-flag.imageset\CY-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\cyprus-flag.imageset\CY.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\cyprus-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\czech republic-flag.imageset\CZ-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\czech republic-flag.imageset\CZ.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\czech republic-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\denmark-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\denmark-flag.imageset\DK-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\denmark-flag.imageset\DK.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\finland-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\finland-flag.imageset\FI-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\finland-flag.imageset\FI.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\france-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\france-flag.imageset\FR-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\france-flag.imageset\FR.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\germany-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\germany-flag.imageset\DE-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\germany-flag.imageset\DE.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\greece-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\greece-flag.imageset\GR-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\greece-flag.imageset\GR.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\hungary-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\hungary-flag.imageset\HU-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\hungary-flag.imageset\HU.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\ireland-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\ireland-flag.imageset\IE-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\ireland-flag.imageset\IE.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\italy-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\italy-flag.imageset\IT-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\italy-flag.imageset\IT.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\japan-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\japan-flag.imageset\JP-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\japan-flag.imageset\JP.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\latvia-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\latvia-flag.imageset\LV-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\latvia-flag.imageset\LV.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\luxembourg-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\luxembourg-flag.imageset\LU-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\luxembourg-flag.imageset\LU.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\macedonia-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\macedonia-flag.imageset\MK-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\macedonia-flag.imageset\MK.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\monaco-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\monaco-flag.imageset\MC-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\monaco-flag.imageset\MC.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\netherlands-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\netherlands-flag.imageset\NL-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\netherlands-flag.imageset\NL.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\norway-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\norway-flag.imageset\NO-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\norway-flag.imageset\NO.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\poland-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\poland-flag.imageset\PL-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\poland-flag.imageset\PL.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\romania-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\romania-flag.imageset\RO-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\romania-flag.imageset\RO.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\russia-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\russia-flag.imageset\RU-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\russia-flag.imageset\RU.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\slovakia-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\slovakia-flag.imageset\SK-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\slovakia-flag.imageset\SK.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\slovenia-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\slovenia-flag.imageset\SI-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\slovenia-flag.imageset\SI.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\sweden-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\sweden-flag.imageset\SE-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\sweden-flag.imageset\SE.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\turkey-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\turkey-flag.imageset\TR-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\turkey-flag.imageset\TR.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\ukraine-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\ukraine-flag.imageset\UA-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\ukraine-flag.imageset\UA.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\us-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\us-flag.imageset\US-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\us-flag.imageset\US.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\vatican-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\vatican-flag.imageset\VA-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\vatican-flag.imageset\VA.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\moldova-flag.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\moldova-flag.imageset\MD-1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\Flags\moldova-flag.imageset\MD.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\black-iphone4S-portrait.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\black-iphone6-portrait.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\black-iphone6plus-portrait.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_cell.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_cell.imageset\calendar_cell.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_current_cell.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_current_cell.imageset\calendar_current_cell.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_header.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_header.imageset\calendar_header.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_selected_cell.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\calendar\calendar_selected_cell.imageset\calendar_selected_cell.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right-white.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right-white.imageset\arrow-right-white.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right-white.imageset\arrow-right-white%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right-white.imageset\arrow-right-white%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right.imageset\arrow-right.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right.imageset\arrow-right%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\arrow-right.imageset\arrow-right%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar-pink.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar-pink.imageset\calendar-pink.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar-pink.imageset\calendar-pink%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar-pink.imageset\calendar-pink%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar.imageset\calendar.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar.imageset\calendar%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\calendar.imageset\calendar%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\close.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\close.imageset\close.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\close.imageset\close%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\close.imageset\close%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\dark-wood-pattern.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\dark-wood-pattern.imageset\dark-wood-pattern-ipad-wallpaper-1.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\dark-wood-pattern.imageset\dark-wood-pattern-ipad-wallpaper-2.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\dark-wood-pattern.imageset\dark-wood-pattern-ipad-wallpaper.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-name.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-name.imageset\guest-name.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-name.imageset\guest-name%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-name.imageset\guest-name%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-number.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-number.imageset\guest-number.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-number.imageset\guest-number%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\guest-number.imageset\guest-number%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\left-arrow.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\left-arrow.imageset\left-arrow.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\left-arrow.imageset\left-arrow%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\left-arrow.imageset\left-arrow%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\minus.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\minus.imageset\minus.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\minus.imageset\minus%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\minus.imageset\minus%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\phone.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\phone.imageset\phone.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\phone.imageset\phone%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\phone.imageset\phone%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\plus.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\plus.imageset\plus.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\plus.imageset\plus%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\plus.imageset\plus%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\table-number.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\table-number.imageset\table-number.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\table-number.imageset\table-number%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\table-number.imageset\table-number%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\time.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\time.imageset\time.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\time.imageset\time%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\time.imageset\time%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\wood-pattern.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dataform\wood-pattern.imageset\wood-pattern.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast1.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast1.imageset\breakfast1.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast2.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast2.imageset\breakfast2.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast3.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast3.imageset\breakfast3.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast4.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast4.imageset\breakfast4.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast5.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast5.imageset\breakfast5.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast6.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Breakfast\breakfast6.imageset\breakfast6.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert1.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert1.imageset\dessert1.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert2.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert2.imageset\dessert2.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert3.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert3.imageset\dessert3.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert4.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert4.imageset\dessert4.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert5.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert5.imageset\dessert5.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert6.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert6.imageset\dessert6.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert7.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert7.imageset\dessert7.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert8.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Desserts\dessert8.imageset\dessert8.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink1.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink1.imageset\drink1.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink10.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink10.imageset\drink10.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink11.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink11.imageset\drink11.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink12.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink12.imageset\drink12.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink2.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink2.imageset\drink2.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink3.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink3.imageset\drink3.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink4.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink4.imageset\drink4.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink5.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink5.imageset\drink5.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink6.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink6.imageset\drink6.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink7.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink7.imageset\drink7.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink8.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink8.imageset\drink8.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink9.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Drinks\drink9.imageset\drink9.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main1.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main1.imageset\main1.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main10.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main10.imageset\main10.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main11.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main11.imageset\main11.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main12.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main12.imageset\main12.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main13.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main13.imageset\main13.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main2.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main2.imageset\main2.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main3.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main3.imageset\main3.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main4.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main4.imageset\main4.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main5.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main5.imageset\main5.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main6.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main6.imageset\main6.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main7.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main7.imageset\main7.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main8.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main8.imageset\main8.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main9.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Main\main9.imageset\main9.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo1.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo1.imageset\paleo1.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo2.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo2.imageset\paleo2.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo3.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo3.imageset\paleo3.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo4.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo4.imageset\paleo4.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo5.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\dishes\Paleo\paleo5.imageset\paleo5.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\clear.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\clear.imageset\clear.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\clear.imageset\clear%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\clear.imageset\clear%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\menu.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\menu.imageset\menu.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\menu.imageset\menu%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\search.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\search.imageset\search.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\search.imageset\search%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\icons\search.imageset\search%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\logo.imageset\AppIcon76x76.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\logo.imageset\AppIcon76x76%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\logo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\pattern1.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\pattern1.imageset\pattern1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\pattern1.imageset\pattern1%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ALFKIF.imageset\ALFKI.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ALFKIF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ANATRF.imageset\ANATR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ANATRF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ANTONM.imageset\ANTON.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ANTONM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AROUTM.imageset\AROUT.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AROUTM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AppIcon.appiconset\AppIcon29x29%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AppIcon.appiconset\AppIcon60x60%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AppIcon.appiconset\AppIcon76x76.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AppIcon.appiconset\AppIcon76x76%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BERGSF.imageset\BERGS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BERGSF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BLAUSF.imageset\BLAUS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BLAUSF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BLONPM.imageset\BLONP.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BLONPM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BOLIDM.imageset\BOLID.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BOLIDM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BONAPM.imageset\BONAP.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BONAPM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BOTTMF.imageset\BOTTM.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BOTTMF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BSBEVF.imageset\BSBEV.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\BSBEVF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CACTUM.imageset\CACTU.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CACTUM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CENTCM.imageset\CENTC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CENTCM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CHOPSF.imageset\CHOPS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CHOPSF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\COMMIM.imageset\COMMI.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\COMMIM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CONSHF.imageset\CONSH.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\CONSHF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\DRACDM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\DRACDM.imageset\DRACD.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\DUMONF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\DUMONF.imageset\DUMON.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\EASTCF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\EASTCF.imageset\EASTC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ERNSHM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ERNSHM.imageset\ERNSH.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FAMIAF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FAMIAF.imageset\FAMIA.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FISSAM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FISSAM.imageset\FISSA.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FOLIGF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FOLIGF.imageset\FOLIG.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FOLKOF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FOLKOF.imageset\FOLKO.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FRANKM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FRANKM.imageset\FRANK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FRANRF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FRANRF.imageset\FRANR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FRANSM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FRANSM.imageset\FRANS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FURIBM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\FURIBM.imageset\FURIB.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GALEDM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GALEDM.imageset\GALED.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GODOSM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GODOSM.imageset\GODOS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GOURLM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GOURLM.imageset\GOURL.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GREALM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GREALM.imageset\GREAL.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GROSRM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\GROSRM.imageset\GROSR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HANARM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HANARM.imageset\HANAR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HILAAM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HILAAM.imageset\HILAA.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HUNGCM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HUNGCM.imageset\HUNGC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HUNGOF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\HUNGOF.imageset\HUNGO.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ISLATF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ISLATF.imageset\ISLAT.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\KOENEM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\KOENEM.imageset\KOENE.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LACORM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LACORM.imageset\LACOR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LAMAIF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LAMAIF.imageset\LAMAI.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LAUGBM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LAUGBM.imageset\LAUGB.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LAZYKM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LAZYKM.imageset\LAZYK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LEHMSF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LEHMSF.imageset\LEHMS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LETSSF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LETSSF.imageset\LETSS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LILASM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LILASM.imageset\LILAS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LINODM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LINODM.imageset\LINOD.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LONEPF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\LONEPF.imageset\LONEP.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MAGAAM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MAGAAM.imageset\MAGAA.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MAISDF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MAISDF.imageset\MAISD.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MEREPM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MEREPM.imageset\MEREP.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MORGKM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\MORGKM.imageset\MORGK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\NORTSM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\NORTSM.imageset\NORTS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\OCEANF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\OCEANF.imageset\OCEAN.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\OLDWOF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\OLDWOF.imageset\OLDWO.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\OTTIKF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\OTTIKF.imageset\OTTIK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PARISF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PARISF.imageset\PARIS.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PERICM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PERICM.imageset\PERIC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PICCOM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PICCOM.imageset\PICCO.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PRINIF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\PRINIF.imageset\PRINI.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\QUEDEM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\QUEDEM.imageset\QUEDE.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\QUEENF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\QUEENF.imageset\QUEEN.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\QUICKM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\QUICKM.imageset\QUICK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RANCHM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RANCHM.imageset\RANCH.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RATTCF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RATTCF.imageset\RATTC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\REGGCM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\REGGCM.imageset\REGGC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RICARF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RICARF.imageset\RICAR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RICSUM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\RICSUM.imageset\RICSU.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ROMEYF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\ROMEYF.imageset\ROMEY.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SANTGM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SANTGM.imageset\SANTG.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SAVEAM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SAVEAM.imageset\SAVEA.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SEVESM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SEVESM.imageset\SEVES.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SIMOBF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SIMOBF.imageset\SIMOB.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SPECDF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SPECDF.imageset\SPECD.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SPLIRM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SPLIRM.imageset\SPLIR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SUPRDF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\SUPRDF.imageset\SUPRD.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\THEBIF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\THEBIF.imageset\THEBI.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\THECRF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\THECRF.imageset\THECR.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TOMSPF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TOMSPF.imageset\TOMSP.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TORTUM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TORTUM.imageset\TORTU.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TRADHF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TRADHF.imageset\TRADH.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TRAIHM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\TRAIHM.imageset\TRAIH.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\VAFFEM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\VAFFEM.imageset\VAFFE.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\VICTEF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\VICTEF.imageset\VICTE.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\VINETM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\VINETM.imageset\VINET.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WANDKF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WANDKF.imageset\WANDK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WARTHM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WARTHM.imageset\WARTH.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WELLIF.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WELLIF.imageset\WELLI.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WHITCM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WHITCM.imageset\WHITC.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WILMKM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WILMKM.imageset\WILMK.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WOLZAM.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\people\WOLZAM.imageset\WOLZA.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\sdk-examples-bg.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\sdk-examples-bg.imageset\sdk-examples-bg.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Images.xcassets\sdk-examples-bg.imageset\sdk-examples-bg%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+</Project>

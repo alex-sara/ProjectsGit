@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:examples="clr-namespace:Examples;assembly=Examples"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             x:Class="Examples.SpreadStreamProcessing.GenerateSpreadsheet.Example">
+    <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" BackgroundColor="White">
+        <Grid.Behaviors>
+            <examples:CustomBehavior />
+        </Grid.Behaviors>
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength"
+                                    iOS="40"
+                                    Android="56"
+                                    WinPhone="56"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="*"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength"
+                                    iOS="40"
+                                    Android="56"
+                                    WinPhone="56"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" BackgroundColor="#0A90D0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image VerticalOptions="Center" Margin="16, 0" Aspect="AspectFit">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="up_caret_white.png"
+                                    Android="up_caret_white.png"
+                                    WinPhone="Assets\up_caret_white.png"/>
+                    </Image.Source>
+                </Image>
+
+                <Button Command="{Binding Path=GoBackCommand}" BackgroundColor="Transparent">
+                    <Button.Opacity>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                        iOS="1"
+                                        Android="0"
+                                        WinPhone="0"/>
+                    </Button.Opacity>
+                </Button>
+
+                <Label Text="MY COURSES" TextColor="White" FontSize="13" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <telerikDataControls:RadListView Grid.Row="1" x:Name="list" ItemsSource="{Binding Courses}" SelectionMode="None">
+                <telerikDataControls:RadListView.ItemStyle>
+                    <listView:ListViewItemStyle BackgroundColor="Transparent" BorderLocation="Bottom" BorderColor="#F0F0F0" BorderWidth="1" />
+                </telerikDataControls:RadListView.ItemStyle>
+                <telerikDataControls:RadListView.LayoutDefinition>
+                    <listView:ListViewLinearLayout ItemLength="80" />
+                </telerikDataControls:RadListView.LayoutDefinition>
+                <telerikDataControls:RadListView.ItemTemplate>
+                    <DataTemplate>
+                        <listView:ListViewTemplateCell>
+                            <listView:ListViewTemplateCell.View>
+                                <Grid ColumnSpacing="0" RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Margin="16, 0">
+                                        <Label Text="{Binding CourseName}" FontSize="16" TextColor="Black" />
+                                        <Label Text="{Binding University}" FontSize="13" TextColor="Black">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String"
+                                                            iOS="Helvetica-light"
+                                                            Android="sans-serif-light"
+                                                            WinPhone="/Assets/Fonts/segoeuisl.ttf#Segoe UI" />
+                                            </Label.FontFamily>
+                                        </Label>
+                                    </StackLayout>
+
+                                    <Label Text="{Binding Path=Progress, StringFormat='{0} %'}" FontSize="16" TextColor="Black" Grid.Column="1" VerticalOptions="Center" Margin="16, 0">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String"
+                                                            iOS="Helvetica-light"
+                                                            Android="sans-serif-light"
+                                                            WinPhone="/Assets/Fonts/segoeuisl.ttf#Segoe UI" />
+                                        </Label.FontFamily>
+                                    </Label>
+                                </Grid>
+                            </listView:ListViewTemplateCell.View>
+                        </listView:ListViewTemplateCell>
+                    </DataTemplate>
+                </telerikDataControls:RadListView.ItemTemplate>
+            </telerikDataControls:RadListView>
+
+            <Button BackgroundColor="#FBB03B" Text="Generate Spreadsheet" Grid.Row="2" BorderRadius="0" Command="{Binding Path=GenerateSpreadsheetCommand}" />
+        </Grid>
+    </Grid>
+</ContentPage>

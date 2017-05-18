@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8379CB10-EC52-47C8-8373-ABF4B689FDC7}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QSF.Droid</RootNamespace>
+    <AssemblyName>QSF.Droid</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <JavaOptions />
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidTlsProvider>
+    </AndroidTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <FileAlignment>512</FileAlignment>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <DevInstrumentationEnabled>True</DevInstrumentationEnabled>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
+    <Debugger>.Net (Xamarin)</Debugger>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86,x86_64,arm64-v8a</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <Debugger>Xamarin</Debugger>
+    <DevInstrumentationEnabled>False</DevInstrumentationEnabled>
+    <DebugSymbols>False</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="SkiaSharp, Version=1.55.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.1.55.1\lib\MonoAndroid\SkiaSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Android, Version=1.55.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.1.55.1\lib\MonoAndroid\SkiaSharp.Views.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms, Version=1.55.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.Forms.1.55.1\lib\MonoAndroid\SkiaSharp.Views.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2017.1.10424.234, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Chart">
+      <HintPath>..\..\..\Binaries\Android\Telerik.Xamarin.Android.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Common">
+      <HintPath>..\..\..\Binaries\Android\Telerik.Xamarin.Android.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Data">
+      <HintPath>..\..\..\Binaries\Android\Telerik.Xamarin.Android.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Input">
+      <HintPath>..\..\..\Binaries\Android\Telerik.Xamarin.Android.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.List">
+      <HintPath>..\..\..\Binaries\Android\Telerik.Xamarin.Android.List.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Primitives">
+      <HintPath>..\..\..\Binaries\Android\Telerik.Xamarin.Android.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\Binaries\Android\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip, Version=2017.1.10424.234, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\Portable\Telerik.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Design.23.3.0\lib\MonoAndroid43\Xamarin.Android.Support.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v4.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.AppCompat.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.CardView.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.MediaRouter.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.RecyclerView.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v8.RenderScript, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v8.RenderScript.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v8.RenderScript.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeViewerRenderer.cs" />
+    <Compile Include="CustomizedLabelRenderer.cs" />
+    <Compile Include="CustomizedPickerRenderer.cs" />
+    <Compile Include="CustomDataFormRenderer.cs" />
+    <Compile Include="Effects\EntryEffect.cs" />
+    <Compile Include="FileViewer.cs" />
+    <Compile Include="GenericButtonRenderer.cs" />
+    <Compile Include="GroupLayoutManager.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="SplashActivity.cs" />
+    <Compile Include="DayViewCalendarRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\Editor_Main_Layout_1.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Custom_Group_Layout.axml" />
+    <AndroidResource Include="Resources\layout\Editor_Main_Layout_2.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\screen_dataform_reservations.png" />
+    <AndroidResource Include="Resources\drawable\screen_rating.png" />
+    <AndroidResource Include="Resources\drawable\screen_segment_preview.png" />
+    <AndroidResource Include="Resources\drawable\screen_spreadstream.png" />
+    <AndroidResource Include="Resources\drawable\screen_zip_library.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Phone_Number.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_busyindicator_customindicator.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_busyindicator_gallery.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_dataform_reservations.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_rating.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_segment_preview.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_spreadstream.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_tabview_restaurantmenu.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_zip_library.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Phone_Number.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_busyindicator_customindicator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_busyindicator_gallery.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_dataform_reservations.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_rating.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_segment_preview.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_spreadstream.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_tabview_restaurantmenu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_zip_library.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Phone_Number.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\pie_1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\pie_2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_busyindicator_customindicator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_busyindicator_gallery.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_dataform_reservations.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_gauge_activitydashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_gauge_gallery_horizontal.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_gauge_gallery_radial.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_gauge_gallery_vertical.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_pie_chart.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_rating.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_segment_preview.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_spreadstream.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_tabview_restaurantmenu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_zip_library.png" />
+    <AndroidResource Include="Resources\drawable\screen_day_view.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_day_view.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_day_view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <AndroidResource Include="Resources\drawable\abc_btn_radio_to_on_mtrl_000.png" />
+    <AndroidResource Include="Resources\drawable\area_1.png" />
+    <AndroidResource Include="Resources\drawable\area_3.png" />
+    <AndroidResource Include="Resources\drawable\background_normal.png" />
+    <AndroidResource Include="Resources\drawable\bar_1.png" />
+    <AndroidResource Include="Resources\drawable\bar_2.png" />
+    <AndroidResource Include="Resources\drawable\bar_3.png" />
+    <AndroidResource Include="Resources\drawable\bar_4.png" />
+    <AndroidResource Include="Resources\drawable\bar_5.png" />
+    <AndroidResource Include="Resources\drawable\bar_6.png" />
+    <AndroidResource Include="Resources\drawable\bar_7.png" />
+    <AndroidResource Include="Resources\drawable\bar_8.png" />
+    <AndroidResource Include="Resources\drawable\Breakfast0.png" />
+    <AndroidResource Include="Resources\drawable\Breakfast1.png" />
+    <AndroidResource Include="Resources\drawable\Breakfast2.png" />
+    <AndroidResource Include="Resources\drawable\Breakfast3.png" />
+    <AndroidResource Include="Resources\drawable\Cocktails0.png" />
+    <AndroidResource Include="Resources\drawable\Cocktails1.png" />
+    <AndroidResource Include="Resources\drawable\Cocktails2.png" />
+    <AndroidResource Include="Resources\drawable\Cocktails3.png" />
+    <AndroidResource Include="Resources\drawable\Desserts0.png" />
+    <AndroidResource Include="Resources\drawable\Desserts1.png" />
+    <AndroidResource Include="Resources\drawable\Desserts2.png" />
+    <AndroidResource Include="Resources\drawable\Desserts3.png" />
+    <AndroidResource Include="Resources\drawable\gridLayout.png" />
+    <AndroidResource Include="Resources\drawable\ic_list_view.png" />
+    <AndroidResource Include="Resources\drawable\ic_listview_layouts_wrap.png" />
+    <AndroidResource Include="Resources\drawable\ic_listview_selection_delete.png" />
+    <AndroidResource Include="Resources\drawable\ic_listview_selection_fav.png" />
+    <AndroidResource Include="Resources\drawable\ic_listview_selection_fav1.png" />
+    <AndroidResource Include="Resources\drawable\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable\ic_view_example.png" />
+    <AndroidResource Include="Resources\drawable\img.png" />
+    <AndroidResource Include="Resources\drawable\line_1.png" />
+    <AndroidResource Include="Resources\drawable\line_5.png" />
+    <AndroidResource Include="Resources\drawable\linearLayout.png" />
+    <AndroidResource Include="Resources\drawable\Paleo0.png" />
+    <AndroidResource Include="Resources\drawable\Paleo1.png" />
+    <AndroidResource Include="Resources\drawable\Paleo2.png" />
+    <AndroidResource Include="Resources\drawable\Paleo3.png" />
+    <AndroidResource Include="Resources\drawable\reorder_icon.png" />
+    <AndroidResource Include="Resources\drawable\reorder_icon1.png" />
+    <AndroidResource Include="Resources\drawable\reorder_icon2.png" />
+    <AndroidResource Include="Resources\drawable\reorder_icon3.png" />
+    <AndroidResource Include="Resources\drawable\reorder_icon4.png" />
+    <AndroidResource Include="Resources\drawable\Sandwich0.png" />
+    <AndroidResource Include="Resources\drawable\Sandwich1.png" />
+    <AndroidResource Include="Resources\drawable\Sandwich2.png" />
+    <AndroidResource Include="Resources\drawable\Sandwich3.png" />
+    <AndroidResource Include="Resources\drawable\scatter.png" />
+    <AndroidResource Include="Resources\drawable\screen_area_chart.png" />
+    <AndroidResource Include="Resources\drawable\screen_bar_chart.png" />
+    <AndroidResource Include="Resources\drawable\screen_calendar.png" />
+    <AndroidResource Include="Resources\drawable\screen_line_chart.png" />
+    <AndroidResource Include="Resources\drawable\screen_scatter_chart.png" />
+    <AndroidResource Include="Resources\drawable\sidedrawer_navdrawer_user.png" />
+    <AndroidResource Include="Resources\drawable\up_caret_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\up_caret_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\background_normal.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_next.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_prev.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_list_view.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_listview_layouts_wrap.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_listview_selection_delete.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_listview_selection_fav.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_listview_selection_fav1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_view_example.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sidedrawer_navdrawer_user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\up_caret_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sidedrawer_navdrawer_user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_view_example.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\background_normal.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_next.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_prev.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_list_view.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_listview_layouts_wrap.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_listview_selection_delete.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_listview_selection_fav.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_listview_selection_fav1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\up_caret_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sidedrawer_navdrawer_user.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\up_caret.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_view_example.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\background_normal.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_next.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_prev.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_list_view.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_listview_layouts_wrap.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_listview_selection_delete.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_listview_selection_fav.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_listview_selection_fav1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\drawable\wood_pattern.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\wood_pattern.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\wood_pattern.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\wood_pattern.png" />
+    <AndroidResource Include="Resources\drawable\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\drawable\sidedrawer_navdrawer_bg.jpg" />
+    <AndroidResource Include="Resources\drawable\up_caret.png" />
+    <AndroidResource Include="Resources\drawable\line_7.png" />
+    <AndroidResource Include="Resources\drawable\line_3.png" />
+    <AndroidResource Include="Resources\drawable\ic_overflow.png" />
+    <AndroidResource Include="Resources\drawable\ic_list_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable\area_6.png" />
+    <AndroidResource Include="Resources\drawable\area_2.png" />
+    <AndroidResource Include="Resources\drawable\area_4.png" />
+    <AndroidResource Include="Resources\drawable\area_5.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\area_1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\area_2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\area_3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\area_4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\area_5.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\area_6.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_5.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_6.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_7.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bar_8.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\line_1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\line_3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\line_5.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\line_7.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\scatter.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_area_chart.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_bar_chart.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_calendar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_scatter_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\area_1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\area_2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\area_3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\area_4.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\area_5.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\area_6.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_4.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_5.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_6.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_7.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bar_8.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_list_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\line_1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\line_3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\line_5.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\line_7.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_area_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_bar_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_line_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_scatter_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sidedrawer_navdrawer_bg.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\up_caret.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\area_1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\area_2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\area_3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\area_4.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\area_5.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\area_6.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_4.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_5.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_6.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_7.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bar_8.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_actionbar_overflow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_list_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_overflow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\line_1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\line_3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\line_5.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\line_7.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\scatter.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_area_chart.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_bar_chart.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_calendar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_scatter_chart.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sidedrawer_navdrawer_bg.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_listview_selection_reorder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_listview_selection_reorder.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_listview_selection_reorder.png" />
+    <AndroidResource Include="Resources\drawable\ic_listview_selection_reorder.png" />
+    <AndroidResource Include="Resources\drawable\up_caret_grey.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\up_caret_grey.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\up_caret_grey.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\up_caret_grey.png" />
+    <AndroidResource Include="Resources\drawable\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable\ic_listview_reorder_delete.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_listview_reorder_delete.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_listview_reorder_delete.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_listview_reorder_delete.png" />
+    <AndroidResource Include="Resources\drawable\ic_full_screen.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_full_screen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_full_screen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_full_screen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_sidedrawer_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_sidedrawer_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_listview_selection.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_listview_reorder.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_listview_layouts.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_line_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_sidedrawer_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_sidedrawer_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_listview_selection.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_listview_reorder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_listview_layouts.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_calendar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_sidedrawer_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_sidedrawer_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_listview_selection.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_listview_reorder.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_listview_layouts.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_line_chart.png" />
+    <AndroidResource Include="Resources\drawable\screen_sidedrawer_sidedrawer.png" />
+    <AndroidResource Include="Resources\drawable\screen_sidedrawer_settings.png" />
+    <AndroidResource Include="Resources\drawable\screen_listview_selection.png" />
+    <AndroidResource Include="Resources\drawable\screen_listview_reorder.png" />
+    <AndroidResource Include="Resources\drawable\screen_listview_layouts.png" />
+    <AndroidResource Include="Resources\drawable\screen_pie_chart.png" />
+    <AndroidResource Include="Resources\drawable\pie_1.png" />
+    <AndroidResource Include="Resources\drawable\pie_2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pie_1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pie_2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_pie_chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\pie_1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\pie_2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_pie_chart.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\dataform_black.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dataform_black.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dataform_black.png" />
+    <AndroidResource Include="Resources\drawable\wood_pattern_IVO.png" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\drawable\DataForm_Calendar_Header.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Cancel.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Date.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Guest_Name.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Guest_Number.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Phone_Number.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Section.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Table_Number.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Time.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Calendar_Header.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Cancel.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Date.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Guest_Name.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Guest_Number.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Section.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Table_Number.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Time.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Calendar_Header.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Cancel.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Date.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Guest_Name.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Guest_Number.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Section.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Table_Number.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Time.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Calendar_Header.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Cancel.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Date.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Guest_Name.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Guest_Number.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Section.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Table_Number.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Time.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Circle_Background.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Circle_Background.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Circle_Background.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Circle_Background.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm_Add.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm_Add.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm_Add.png" />
+    <AndroidResource Include="Resources\drawable\DataForm_Add.png" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_beach.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_buenos_aires_hotel.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_bulgaria_sunny_beach.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_bulgaria_tevno_lake.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_castel_sant_angelo.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_church_st_george_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_featherbed_nature_reserve_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_forbidden_city_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_forest_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_georgetown_university.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_key_spices_indian_cuisine.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_kustendil_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_leopard_samburu_reserve.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_lioness_nakuru_national_park_kenya.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_london_eye_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_maasai_mara_nature_reserve.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_madison_square_garden_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_mahamuni_pagoda_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_miraflores_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_museum_qin_terracotta_warriors_horses_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_panichishte_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_rent_a_car_or_taxi_in_cuba.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_roman_colosseum_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_shwedagon_pagoda_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_street_shanghai_china.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_sunny_beach_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_sunny_beach_bulgaria_balloon.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_titicaca_lake_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_tsarevets_sound_and_light_veliko_tarnovo.jpg" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_universal_studios_orlando_harry_potter_theme_park.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_lioness_nakuru_national_park_kenya.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_london_eye_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_maasai_mara_nature_reserve.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_madison_square_garden_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_mahamuni_pagoda_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_miraflores_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_museum_qin_terracotta_warriors_horses_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_panichishte_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_rent_a_car_or_taxi_in_cuba.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_roman_colosseum_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_shwedagon_pagoda_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_street_shanghai_china.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_sunny_beach_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_sunny_beach_bulgaria_balloon.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_titicaca_lake_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_tsarevets_sound_and_light_veliko_tarnovo.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_universal_studios_orlando_harry_potter_theme_park.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_beach.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_buenos_aires_hotel.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_bulgaria_sunny_beach.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_bulgaria_tevno_lake.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_castel_sant_angelo.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_church_st_george_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_featherbed_nature_reserve_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_forbidden_city_attraction.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_forest_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_georgetown_university.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_key_spices_indian_cuisine.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_kustendil_bulgaria.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_leopard_samburu_reserve.jpg" />
+    <AndroidResource Include="Resources\drawable\screen_autocomplete_tokens.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_autocomplete_tokens.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_autocomplete_tokens.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\screen_autocomplete_tokens.png" />
+    <AndroidResource Include="Resources\drawable\autocomplete_tokens_search.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\autocomplete_tokens_search.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\autocomplete_tokens_search.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_gauge_activitydashboard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_gauge_activitydashboard.png" />
+    <AndroidResource Include="Resources\drawable\screen_gauge_activitydashboard.png" />
+    <AndroidResource Include="Resources\drawable\screen_gauge_gallery_radial.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_gauge_gallery_radial.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_gauge_gallery_radial.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_1.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_2.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_3.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_4.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_5.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_6.png" />
+    <AndroidResource Include="Resources\drawable\pdf_file.png" />
+    <AndroidResource Include="Resources\drawable\png_file.png" />
+    <AndroidResource Include="Resources\drawable\selected_item.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pdf_file.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\png_file.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\selected_item.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\pdf_file.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\png_file.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\selected_item.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\pdf_file.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\png_file.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\selected_item.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\xlsx_file.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\docx_file.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\xlsx_file.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\docx_file.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\xlsx_file.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\docx_file.png" />
+    <AndroidResource Include="Resources\drawable\xlsx_file.png" />
+    <AndroidResource Include="Resources\drawable\docx_file.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_7.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_8.png" />
+    <AndroidResource Include="Resources\drawable\application_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\application_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\application_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\application_icon.png" />
+    <AndroidResource Include="Resources\drawable\screen_gauge_gallery_horizontal.png" />
+    <AndroidResource Include="Resources\drawable\screen_gauge_gallery_vertical.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_gauge_gallery_horizontal.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\screen_gauge_gallery_vertical.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_gauge_gallery_horizontal.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\screen_gauge_gallery_vertical.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_10.png" />
+    <AndroidResource Include="Resources\drawable\gauge_gallery_item_9.png" />
+    <AndroidResource Include="Resources\drawable\tyre.png" />
+    <AndroidResource Include="Resources\drawable\screen_busyindicator_customindicator.png" />
+    <AndroidResource Include="Resources\drawable\screen_busyindicator_gallery.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Explore.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Explore_Selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tabView_Restaurant_Explore.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tabView_Restaurant_Explore_Selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tabView_Restaurant_Explore.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tabView_Restaurant_Explore_Selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tabView_Restaurant_Saved.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tabView_Restaurant_Saved_Selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tabView_Restaurant_Saved.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tabView_Restaurant_Saved_Selected.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Saved.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Saved_Selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tabView_Restaurant_ShoppingList.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tabView_Restaurant_ShoppingList_Selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tabView_Restaurant_ShoppingList.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tabView_Restaurant_ShoppingList_Selected.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_ShoppingList.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_ShoppingList_Selected.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_BlueberryWaffle.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_BulgarianTortilla.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_FrenchBread.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_HealthyBreakfast.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Indian.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Lager.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_MediterraneanFish.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_PorkWithBlueberries.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Sausages.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_SpinachPotatoNestBites.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Tiramisu.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_WhiteWine.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Wine.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Ale.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_AmericanPancakes.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_BelgianChocolate.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Heart.png" />
+    <AndroidResource Include="Resources\drawable\tabView_Restaurant_Heart_Selected.png" />
+    <AndroidResource Include="Resources\drawable\rating_restaurant.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\rating_restaurant.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rating_restaurant.jpg" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation1.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation2.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation3.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation4.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation5.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation6.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation7.png" />
+    <AndroidResource Include="Resources\drawable\busy_indicator_gallery_animation8.png" />
+    <AndroidResource Include="Resources\drawable\screen_tabview_restaurantmenu.png" />
+    <AndroidResource Include="Resources\drawable\segment_dinner.png" />
+    <AndroidResource Include="Resources\drawable\segment_drinks.png" />
+    <AndroidResource Include="Resources\drawable\segment_snack.png" />
+    <AndroidResource Include="Resources\drawable\segment_tile.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_dinner.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_drinks.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_snack.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_tile.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\segment_dinner.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\segment_drinks.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\segment_snack.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\segment_tile.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\segment_dinner.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\segment_drinks.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\segment_snack.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\segment_tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Examples\Examples.csproj">
+      <Project>{fa006612-b229-48f8-9df9-599b501efef0}</Project>
+      <Name>Examples</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!--Custom PropertyGroup for accessing the code of the examples-->
+  <PropertyGroup>
+    <PrepareResourceNamesDependsOn>
+      IncludeFilesInResources;
+      $(PrepareResourceNamesDependsOn)
+    </PrepareResourceNamesDependsOn>
+  </PropertyGroup>
+  <Target Name="IncludeFilesInResources">
+    <ItemGroup>
+      <!--Describes folder which should be copied from the Examples Assembly.
+          The **\* structure  recursively defines all files (*) in all subfolders (**) of the Calendar examples.-->
+      <SourceResourceFiles Include="..\..\Examples\AutoComplete\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\AutoComplete</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\BusyIndicator\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\BusyIndicator</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Calendar\**\*">
+        <!--This is the folder where the files will be copied to (part of this assembly).-->
+        <RelativeOutputDirectory>Resources\CodeFiles\Calendar</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Chart\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\Chart</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\DataForm\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\DataForm</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Gauge\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\Gauge</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\ListView\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\ListView</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\SideDrawer\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\SideDrawer</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\SpreadStreamProcessing\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\SpreadStreamProcessing</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\Rating\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\Rating</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\TabView\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\TabView</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\ZipLibrary\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\ZipLibrary</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <SourceResourceFiles Include="..\..\Examples\SegmentedControl\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\SegmentedControl</RelativeOutputDirectory>
+      </SourceResourceFiles>
+      <!--This ItemGroup should be extended when new folder in the Examples assembly with examples is added.-->
+    </ItemGroup>
+    <!--Exacutes copy operation over the above described source and destination folders.-->
+    <Copy SourceFiles="@(SourceResourceFiles)" DestinationFolder="%(RelativeOutputDirectory)\%(RecursiveDir)" />
+    <ItemGroup>
+      <!--Includes all copied files as EmbeddedResource in the current assembly.
+          This is required for visualizing the code in the respective QSF Page.-->
+      <EmbeddedResource Include="%(SourceResourceFiles.RelativeOutputDirectory)\**\*" />
+    </ItemGroup>
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

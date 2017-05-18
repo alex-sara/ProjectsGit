@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:listView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+             x:Class="Examples.AvailableExamplesPage"
+             xmlns:this="clr-namespace:Examples;assembly=Examples"
+             BackgroundColor="#F8F8F8">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <this:UwpImageSourceConverter x:Key="UwpImageSourceConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <telerikPrimitives:RadSideDrawer  x:Name="homeScreenDrawer"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="FillAndExpand"
+                                    IsOpen="{Binding IsOpen, Mode=TwoWay}"
+                                    DrawerTransitionType="SlideInOnTop"
+                                    DrawerTransitionFadeOpacity="0.3"
+                                    DrawerLocation="Bottom"
+                                    Grid.RowSpan="2">
+    <telerikPrimitives:RadSideDrawer.MainContent>
+      <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition >
+            <RowDefinition.Height>
+              <OnPlatform x:TypeArguments="GridLength"
+                          iOS="44"
+                          WinPhone="56"
+                          Android="56" />
+            </RowDefinition.Height>
+          </RowDefinition>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!--Navigation Bar-->
+        <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" >
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Grid x:Name="backButton"
+                Grid.ColumnSpacing="0"
+                Grid.RowSpacing="0"
+                Padding="16, 0, 0, 0"
+                BackgroundColor="Transparent"
+                HeightRequest="48"
+                WidthRequest="48">
+            <Image HorizontalOptions="Start"
+                   VerticalOptions="Center">
+              <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                            iOS="ic_arrow_back"
+                            Android="ic_arrow_back"
+                            WinPhone="Assets\ic_arrow_back.png"/>
+              </Image.Source>
+            </Image>
+          </Grid>
+          <Label Grid.Column="1"
+                 Grid.ColumnSpan="2"
+                 x:Name="navigationLabel"
+                 TextColor="#014F80"
+                 VerticalOptions="Center">
+            <Label.FontSize>
+              <OnPlatform x:TypeArguments="x:Double"
+                          Android="20"
+                          WinPhone="20"
+                          iOS="17"/>
+            </Label.FontSize>
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Helvetica-medium</OnPlatform.iOS>
+                <OnPlatform.Android>sans-serif-medium</OnPlatform.Android>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
+          <Grid x:Name="drawerOpenerHost"
+                Grid.Column="2"
+                Grid.ColumnSpacing="0"
+                Grid.RowSpacing="0"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                HeightRequest="48"
+                BackgroundColor="Transparent"
+                WidthRequest="48"
+                Padding="0, 0, 16, 0" >
+            <Image HorizontalOptions="End"
+                   VerticalOptions="Center">
+              <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                            iOS="ic_menu"
+                            Android="ic_menu"
+                            WinPhone="Assets\ic_menu.png"/>
+              </Image.Source>
+            </Image>
+          </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.ColumnSpacing="0" Grid.RowSpacing="0">
+          <Image HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 Aspect="AspectFill">
+            <Image.Source>
+              <OnPlatform x:TypeArguments="ImageSource"
+                          iOS="background_normal"
+                          Android="background_normal"
+                          WinPhone="Assets\background_normal.png"/>
+            </Image.Source>
+          </Image>
+          <Grid Grid.ColumnSpacing="0"
+                Padding="16"
+                Grid.RowSpacing="0">
+            <telerikDataControls:RadListView ItemsSource="{Binding AvailableExamplesList}"
+                                             ItemTapped="ExampleTapped"
+                                             BackgroundColor="Transparent"
+                                             x:Name="examplesList">
+              <telerikDataControls:RadListView.ItemStyle>
+                <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+              </telerikDataControls:RadListView.ItemStyle>
+              <telerikDataControls:RadListView.SelectedItemStyle>
+                <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+              </telerikDataControls:RadListView.SelectedItemStyle>
+              <telerikDataControls:RadListView.PressedItemStyle>
+                <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+              </telerikDataControls:RadListView.PressedItemStyle>
+              <telerikDataControls:RadListView.LayoutDefinition>
+                <listView:ListViewGridLayout Orientation="Vertical" VerticalItemSpacing="12" HorizontalItemSpacing="12">
+                  <listView:ListViewGridLayout.ItemLength>
+                    <OnPlatform x:TypeArguments="x:Double"
+                                iOS="180"
+                                WinPhone="210"
+                                Android="220"/>
+                  </listView:ListViewGridLayout.ItemLength>
+                </listView:ListViewGridLayout>
+              </telerikDataControls:RadListView.LayoutDefinition>
+              <telerikDataControls:RadListView.ItemTemplate>
+                <DataTemplate>
+                  <listView:ListViewTemplateCell>
+                    <listView:ListViewTemplateCell.View>
+                      <StackLayout StackLayout.Spacing="4">
+                        <Image Source="{Binding ImageSourceUri, Converter={StaticResource UwpImageSourceConverter}}"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start">
+                          <!--<Image.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        iOS="140"
+                                        Android="168"/>
+                          </Image.HeightRequest>-->
+                        </Image>
+                        <Label Text="{Binding UserFriendlyTitle}"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"
+                               TextColor="#1E323F">
+                          <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        iOS="17"
+                                        WinPhone="16"
+                                        Android="16"/>
+                          </Label.FontSize>
+                        </Label>
+                      </StackLayout>
+                    </listView:ListViewTemplateCell.View>
+                  </listView:ListViewTemplateCell>
+                </DataTemplate>
+              </telerikDataControls:RadListView.ItemTemplate>
+            </telerikDataControls:RadListView>
+          </Grid>
+        </Grid>
+      </Grid>
+    </telerikPrimitives:RadSideDrawer.MainContent>
+
+    <telerikPrimitives:RadSideDrawer.DrawerContent>
+      <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" BackgroundColor="White" Padding="0, 8, 0, 8">
+        <telerikDataControls:RadListView ItemsSource="{Binding InformationMenuList}" ItemTapped="LinkTapped">
+          <telerikDataControls:RadListView.ItemStyle>
+            <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0" />
+          </telerikDataControls:RadListView.ItemStyle>
+          <telerikDataControls:RadListView.PressedItemStyle>
+            <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+          </telerikDataControls:RadListView.PressedItemStyle>
+          <telerikDataControls:RadListView.SelectedItemStyle>
+            <listView:ListViewItemStyle BackgroundColor="Transparent" BorderWidth="0"/>
+          </telerikDataControls:RadListView.SelectedItemStyle>
+          <telerikDataControls:RadListView.LayoutDefinition>
+            <listView:ListViewLinearLayout ItemLength="48"/>
+          </telerikDataControls:RadListView.LayoutDefinition>
+          <telerikDataControls:RadListView.ItemTemplate>
+            <DataTemplate>
+              <listView:ListViewTemplateCell>
+                <listView:ListViewTemplateCell.View>
+                  <Grid Grid.ColumnSpacing="0" Grid.RowSpacing="0" Padding="16, 0, 0, 0">
+                    <Label Text="{Binding }" VerticalOptions="Center" TextColor="#404040">
+                      <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    iOS="17"
+                                    WinPhone="16"
+                                    Android="16" />
+                      </Label.FontSize>
+                    </Label>
+                  </Grid>
+                </listView:ListViewTemplateCell.View>
+              </listView:ListViewTemplateCell>
+            </DataTemplate>
+          </telerikDataControls:RadListView.ItemTemplate>
+        </telerikDataControls:RadListView>
+      </Grid>
+    </telerikPrimitives:RadSideDrawer.DrawerContent>
+  </telerikPrimitives:RadSideDrawer>
+</ContentPage>

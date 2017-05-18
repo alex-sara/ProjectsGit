@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfQSFControl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <QSFControl>
+    <Description>Telerik AutoComplete for Xamarin Forms.</Description>
+    <Name>AutoComplete</Name>
+    <Examples>
+      <Example>
+        <Title>Tokens</Title>
+        <Image>screen_autocomplete_tokens.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating the AutoComplete and the Tokens feature.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik BusyIndicator enables you to display a notification whenever a longer-running process is being handled by the application. This makes the UI more informative and the user experience smoother.</Description>
+    <Name>BusyIndicator</Name>
+    <Examples>
+      <Example>
+        <Title>Gallery</Title>
+        <Image>screen_busyindicator_gallery.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating the BusyIndicator.</Description>
+      </Example>
+      <Example>
+        <Title>CustomIndicator</Title>
+        <Image>screen_busyindicator_customindicator.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating custom BusyIndicator.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik Calendar for Xamarin Forms allows you to easily implement various calendar scenarios in your apps built with Xamarin or Xamarin.Forms. The control capitalizes on all the innate benefits of the native UI but exposes all objects and properties in C#, allowing for no-compromise customization and flexibility. It supports various view modes (year, month, week and more), selection, appointments, styling customizations.</Description>
+    <Name>Calendar</Name>
+    <Image>Calendar.png</Image>
+    <Examples>
+      <Example>
+        <Title>Appointments</Title>
+        <Image>screen_calendar.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>The example demonstrates how the Calendar control displays dates of a month, showing how events information can be integrated in the Calendar cell's content.</Description>
+      </Example>
+      <Example>
+        <Title>DayView</Title>
+        <ExcludeFrom>U</ExcludeFrom>
+        <Image>screen_day_view.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>Day view mode of RadCalendar with all day area, configurable time ruler and API allowing you to schedule appointments and achieve your scheduling functionality.</Description>
+        <ExcludeFrom>P,U</ExcludeFrom>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik Chart for Xamarin Forms is a feature-rich, intuitive and easy to use data visualization control which employs the Xamarin.Forms technology and allows you to build native apps in C#. It supports various chart types (bar, line, area, candlestick, scatter and more), various axes types (categorical, numeric, date-time and more), selection, annotations, trackball, pan and zoom.</Description>
+    <Name>Chart</Name>
+    <Image>Chart.png</Image>
+    <Examples>
+      <Example>
+        <Title>BarSeries</Title>
+        <Image>screen_bar_chart.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>Bar chart is one of the most common type of graphs used to display data. Sometimes known as 'column charts' depending on the orientation, bar charts are used to visualize data points as bar blocks where the width/height of each bar denotes the magnitude of its value.</Description>
+      </Example>
+      <Example>
+        <Title>LineSeries</Title>
+        <Image>screen_line_chart.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>Line charts are often used to plot changes in data over time, such as monthly temperature changes or daily changes in stock market prices. If you are plotting changes in data over time, time is plotted along the horizontal axis and your other data is plotted as individual points along the vertical axis.</Description>
+      </Example>
+      <Example>
+        <Title>AreaSeries</Title>
+        <Image>screen_area_chart.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>Area charts are much like line charts, but they display different colors in the areas below the lines. This colorful and visual display distinguishes the data more clearly. The Area charts support Stack, Stack100 and standard plotting modes.</Description>
+      </Example>
+      <Example>
+        <Title>ScatterSeries</Title>
+        <Image>screen_scatter_chart.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>A scatter chart is a two-dimensional graphical representation of a set of data where each x/y variable is represented on the graph as a dot. This type of chart can be used in to visually describe relationships between two numerical parameters or to represent distributions.</Description>
+      </Example>
+      <Example>
+        <Title>PieSeries</Title>
+        <Image>screen_pie_chart.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>The pie chart visualizes its data in the shape of a pie. Each data item is visually represented by a pie slice. The ratio between the space consumed by each slice and the space consumed by the whole chart is the same as the ratio between the value of the data point that it represents and the total value of all data points in the series.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik DataForm control allows for easy building of a data fill-in form from a single shared codebase.The control detects the types of the data object’s properties and automatically displays the appropriate editors. It provides a set of built-in editors for the available primitive types such as numeric, string, Boolean and enumerations. You can also provide your own custom editor and implement it easily thanks to the rich API of the control.</Description>
+    <!--This parameter should be set to one of the following strings P, A or iOS-->
+    <ExcludeFrom>P,U</ExcludeFrom>
+    <Name>DataForm</Name>
+    <Image>screen_dataform_reservations.png</Image>
+    <Examples>
+      <Example>
+        <Title>Reservations</Title>
+        <Image>screen_dataform_reservations.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating the most important set of features in DataForm.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik Gauge is an essential Data Visualization component that uses indicators to display numeric values, and uses ranges to give a context to the indicated values.</Description>
+    <Name>Gauge</Name>
+    <Examples>
+      <Example>
+        <Title>ActivityDashboard</Title>
+        <Image>screen_gauge_activitydashboard.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating the Gauge and some of the built-in indicators.</Description>
+      </Example>
+      <Example>
+        <Title>RadialGaugeGallery</Title>
+        <Image>screen_gauge_gallery_radial.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>A gallery demonstrating some of the built-in features of the gauge.</Description>
+      </Example>
+      <Example>
+        <Title>VerticalGaugeGallery</Title>
+        <Image>screen_gauge_gallery_vertical.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>A gallery demonstrating some of the built-in features of the gauge.</Description>
+      </Example>
+      <Example>
+        <Title>HorizontalGaugeGallery</Title>
+        <Image>screen_gauge_gallery_horizontal.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>A gallery demonstrating some of the built-in features of the gauge.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik ListView is a virtualized high-performance list component that provides the most popular features associated with scenarios where a list of items is used. All these features are embedded in one control with the idea to save developer time and provide better experience. The control's features include different layouts, pull-to-refresh, grouping, displaying actionable buttons on item swipe, changing the items order by a drag and drop operation.</Description>
+    <!--This parameter should be set to one of the following strings P, A or iOS-->
+    <ExcludeFrom>P</ExcludeFrom>
+    <Name>ListView</Name>
+    <Image>ListView.png</Image>
+    <Examples>
+      <Example>
+        <Title>Selection</Title>
+        <Image>screen_listview_selection.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>The ListView selection feature allows the end-user to select one or multiple items. The items can also be swiped left or right which reveals actionable buttons which the end-user can tap to execute some tasks.</Description>
+      </Example>
+      <Example>
+        <Title>Layouts</Title>
+        <Image>screen_listview_layouts.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>This example demonstrates the different layouts that the ListView supports - linear layout where there is one item per row and grid layout where you define how many items there should per row.</Description>
+      </Example>
+      <Example>
+        <Title>Reorder</Title>
+        <Image>screen_listview_reorder.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>This example demonstrates how the end-user can reorder items by a drag and drop operation.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik Rating is a flexible UI component that allows users to intuitively rate by making a selection.</Description>
+    <Name>Rating</Name>
+    <Examples>
+      <Example>
+        <Title>RestaurantReview</Title>
+        <Image>screen_rating.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating integration between RadRating and RadGauge components.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik Segmented control enables you to display several options in a convinient picker and select value with a single tap.</Description>
+    <!--This parameter should be set to one of the following strings P, A or iOS-->
+    <Name>SegmentedControl</Name>
+    <Image>segment_tile.png</Image>
+    <Examples>
+      <Example>
+        <Title>FirstLook</Title>
+        <Image>segment_tile.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating the most important set of features in DataForm.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik SideDrawer for Xamarin Forms extends the popular slide-out design pattern which is mainly associated with navigational purposes. The control allows developers to embed any content inside the sliding panel from text and icons to sliders and filters. The control is highly customizable and slides in from all four sides of the screen. Various effects and transition modes come out of the box, including Push, Reveal, Reverse Slide Out, Slide Along, Slide In On Top, Scale Up, Fade In.</Description>
+    <!--This parameter should be set to one of the following strings P, A or iOS-->
+    <ExcludeFrom>P</ExcludeFrom>
+    <Name>SideDrawer</Name>
+    <Image>SideDrawer.png</Image>
+    <Examples>
+      <Example>
+        <Title>Recipes</Title>
+        <Image>screen_sidedrawer_sidedrawer.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>The Recipes examples demonstrates a real-world scenario where the SideDrawer control can come in handy. Thanks to the flexible API you can customize the SideDrawer to match the look and feel of your application.</Description>
+      </Example>
+      <Example>
+        <Title>Settings</Title>
+        <Image>screen_sidedrawer_settings.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>The Telerik SideDrawer can display any type of content and can be opened from any edge of the screen. Further customization can be achieved through the predefined open/close animations.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik SpreadStreamProcessing for Xamarin is a document processing library which allows you to create big spreadsheet documents with great performance and minimal memory footprint.</Description>
+    <Name>SpreadStreamProcessing</Name>
+    <Examples>
+      <Example>
+        <Title>GenerateSpreadsheet</Title>
+        <Image>screen_spreadstream.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating generating spreadsheet document using SpreadStreamProcessing library.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik TabView is a flexible navigation control that allows you to build tabbed interfaces. Each tabview item has an associated content displayed on selection.</Description>
+    <Name>TabView</Name>
+    <Examples>
+      <Example>
+        <Title>RestaurantMenu</Title>
+        <Image>screen_tabview_restaurantmenu.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating the main functionality of the TabView.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+  <QSFControl>
+    <Description>Telerik ZipLibrary for Xamarin Forms provides easy-to-use API to both create and load zip files as well as browse the contents of a zip file previously created. The API supports password protection and different compression levels. You can also create ZIP files in memory or add data to ZIP file from stream.</Description>
+    <Name>ZipLibrary</Name>
+    <Examples>
+      <Example>
+        <Title>CreateArchive</Title>
+        <Image>screen_zip_library.png</Image>
+        <IsFeatured>true</IsFeatured>
+        <Description>An example demonstrating creating zip archive using ZipLibrary.</Description>
+      </Example>
+    </Examples>
+  </QSFControl>
+</ArrayOfQSFControl>
